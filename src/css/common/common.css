@@ -1,0 +1,17 @@
+/* common css */
+
+@theme {
+  /* color */
+  --color-black: #181823;
+  --color-white: #fff;
+  --color-dark: #264e70;
+  --color-primary: #ffebd3;
+  /* font family */
+  --font-primary: "Noto Sans", serif;
+}
+
+@layer components {
+  .container {
+    margin: 0 auto;
+  }
+}

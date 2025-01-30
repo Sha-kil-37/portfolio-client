@@ -1,0 +1,14 @@
+/* font family */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* font family */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* components css */
+@import "./common/common.css";
+@import "./theme/theme";
+@import "./navbar/navbar.css";
+@import "./animation/navbarAnimation.css";
+@import "./home/home.css";
+/* @import "./banner/banner.css"; components css */
