@@ -1,7 +1,7 @@
 @layer components {
   .sticky {
     position: fixed;
-    animation-duration: 0.5s;
+    animation-duration: 0.7s;
     animation-name: fadeInDown;
     animation-timing-function: ease-out;
   }

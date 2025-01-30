@@ -1,0 +1,41 @@
+@layer components {
+  .effect1 {
+    position: absolute;
+    margin: 0;
+    top: 40%;
+    font-size: 2.3em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 3;
+    color: violet;
+  }
+
+  .effect1 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  .text {
+    position: absolute;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    top: 50%;
+    z-index: 3;
+    opacity: 0;
+    top: 50%;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+  }
+
+  .item {
+    background-color: peru;
+    height: 100vh;
+    z-index: 0;
+  }
+
+ 
+}
