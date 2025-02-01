@@ -4,7 +4,7 @@ import Navbar from "../components/NavBar";
 //
 export default function MainLayout({ children }) {
   return (
-    <section className="pt-10">
+    <section className="pt-10 dark:bg-dark">
       <Navbar />
       {children}
       <Outlet />
