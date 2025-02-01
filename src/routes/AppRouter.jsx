@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import One from "../components/One";
 import Two from "../components/Two";
 import Home from "../pages/visitor/home/Home";
-import Welcome from "../components/Welcome";
+import Welcome from "../pages/visitor/welcome/welcome";
 //
 export default function AppRouter() {
   return (

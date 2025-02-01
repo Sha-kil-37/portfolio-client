@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import anime from "animejs";
-
+//
 const AnimatedSection = () => {
   useEffect(() => {
     // Background animation
@@ -57,7 +57,7 @@ const AnimatedSection = () => {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden font-['Kanit',sans-serif]">
+    <div className="relative h-screen overflow-hidden">
       <div className="container flex justify-center w-full">
         <h1 className="effect1 absolute top-[40%] text-3xl uppercase tracking-wide text-[#F6A9BD] z-10">
           hello there, welcome!
