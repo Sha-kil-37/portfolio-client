@@ -24,7 +24,7 @@ const Navbar = () => {
     <header
       className={`${
         scroll
-          ? "sticky dark:bg-dark/50 backdrop-blur-md text-white py-4 w-full top-0 z-10"
+          ? "sticky dark:bg-dark/50 backdrop-blur-md text-white py-4"
           : "py-4 backdrop-blur-md dark:bg-primary fixed top-0 left-0 w-full z-10"
       }`}
     >
