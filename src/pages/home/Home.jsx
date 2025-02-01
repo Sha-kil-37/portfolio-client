@@ -1,14 +1,14 @@
 import { Fragment } from "react";
 import Banner from "../../components/Banner";
 import MainLayout from "../../layout/MainLayout";
-import CloudLightningCanvas from "../../components/CloudLightningCanvas";
+import LightningCanvas from "../../components/LightningCanvas";
 //
 export default function Home() {
   return (
     <MainLayout>
       <Fragment>
         <Banner />
-        <CloudLightningCanvas/>
+        <LightningCanvas/>
       </Fragment>
   
     </MainLayout>
