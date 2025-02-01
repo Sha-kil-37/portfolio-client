@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
 
+import { useEffect, useRef } from "react";
+//
 const LightningCanvas = () => {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -7,10 +8,18 @@ const LightningCanvas = () => {
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    
+    // Load PNG image
+    const image = new Image();
+    image.src = "/src/assets/shakil.png"; // Replace with your PNG image URL
+    image.onload = () => {
+      animate();
+    };
+
     const LEFT = "LEFT";
     const RIGHT = "RIGHT";
     const getDir = () => (Math.random() * 30 < 16 ? LEFT : RIGHT);
-
+    
     class Lightning {
       constructor(x) {
         this.x = x;
@@ -39,7 +48,7 @@ const LightningCanvas = () => {
       }
       draw() {
         if (Math.random() * 100000 < 50) {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+          ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           let sx = this.x,
             sy = this.y,
@@ -71,8 +80,18 @@ const LightningCanvas = () => {
     }
 
     const animate = () => {
-      ctx.fillStyle = "black";
+      // Draw default background
+      const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+      gradient.addColorStop(0, "#1a1a2e"); // Dark blue
+      gradient.addColorStop(1, "#16213e"); // Deep blue
+      ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw PNG image with transparency
+      if (image.complete) {
+        ctx.drawImage(image, canvas.width / 4, canvas.height / 4, canvas.width / 2, canvas.height / 2);
+      }
+
       ctx.shadowColor = "aliceblue";
       ctx.shadowBlur = 10;
 
@@ -82,8 +101,6 @@ const LightningCanvas = () => {
 
       requestAnimationFrame(animate);
     };
-
-    animate();
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -98,3 +115,4 @@ const LightningCanvas = () => {
 };
 
 export default LightningCanvas;
+
