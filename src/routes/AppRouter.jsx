@@ -1,15 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/home/Home";
 import One from "../components/One";
 import Two from "../components/Two";
+import Home from "../pages/visitor/home/Home";
+import Welcome from "../components/Welcome";
 //
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Home />}>
+      {/* visitor route */}
+      <Route path="/" element={<Welcome />}></Route>
+      <Route path="/home" element={<Home />}>
         <Route path="one" element={<One />} />
         <Route path="two" element={<Two />} />
       </Route>
+      {/* visitor route */}
+      {/* admin route */}
+      {/* admin route */}
     </Routes>
   );
 }

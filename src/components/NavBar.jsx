@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setDarkMode } = ThemeContext();
   const [scroll, setScroll] = useState(false);
-  
+
   //
   // handle scroll
 
@@ -24,7 +24,7 @@ const Navbar = () => {
     <header
       className={`${
         scroll
-          ? "sticky dark:bg-dark/50 backdrop-blur-md text-white py-4"
+          ? "sticky top-0 left-0 w-full dark:bg-dark/50 backdrop-blur-md text-white py-4"
           : "py-4 backdrop-blur-md dark:bg-primary fixed top-0 left-0 w-full z-10"
       }`}
     >
@@ -39,7 +39,6 @@ const Navbar = () => {
             <li className="hover:underline">Contact</li>
           </ul>
           <ToggleTheme onClick={setDarkMode} theme={theme} />
-         
         </div>
 
         {/* Mobile navbar */}

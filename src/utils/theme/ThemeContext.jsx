@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import UseTheme from "../../hooks/UseTheme";
+import UseTheme from "../../hooks/visitor/UseTheme";
 // create a context for the theme
 const MyThemeContext = createContext();
 // create a provider for the theme

@@ -6,9 +6,9 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 /* components css */
-@import "./common/common.css";
-@import "./theme/theme";
-@import "./navbar/navbar.css";
-@import "./animation/navbarAnimation.css";
-@import "./home/home.css";
-/* @import "./banner/banner.css"; components css */
+@import "./visitor/common/common.css";
+@import "./visitor/theme/theme.css";
+@import "./visitor/navbar/navbar.css";
+@import "./animation/visitor/navbarAnimation.css";
+@import "./visitor/home/home.css";
+@import "./visitor/banner/banner.css"
