@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import anime from "animejs";
 //
 const AnimatedSection = () => {
@@ -29,7 +29,7 @@ const AnimatedSection = () => {
       .add(
         {
           targets: ".text",
-          top: "49%",
+          top: "60%",
           opacity: 1,
           duration: 4500,
         },
@@ -57,21 +57,26 @@ const AnimatedSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen overflow-hidden w-full block">
-      <div className="container flex justify-center w-full">
-        <h1 className="effect1 absolute top-[40%] text-3xl uppercase tracking-wide text-[#F6A9BD] z-10">
-          hello there, welcome!
+    <section className="relative h-screen overflow-hidden block">
+      <div>
+        <h1 className="effect1 uppercase tracking-wide text-primary font-bold text-5xl font-primary text-center">
+          hello there, welcome! to my portfolio version 1.0
         </h1>
-        <p className="text absolute top-[50%] text-2xl uppercase tracking-wider text-[#F0386B] font-thin opacity-0">
-          nice to meet you ☺
-        </p>
+        <button
+          onClick={() => navigator("/home")}
+          className="text text-center inline-block cursor-pointer px-2 py-1 text-dark bg-primary left-[50%] translate-x-[-50%] font-primary"
+        >
+          more about
+        </button>
       </div>
 
+      {/* background slider */}
       <div className="grid grid-cols-10">
         {[...Array(10)].map((_, index) => (
           <div key={index} className="item bg-[#F4E0E1] h-screen"></div>
         ))}
       </div>
+      {/* background slider  */}
     </section>
   );
 };
