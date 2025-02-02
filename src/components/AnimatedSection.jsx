@@ -57,7 +57,7 @@ const AnimatedSection = () => {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <section className="relative h-screen overflow-hidden w-full block">
       <div className="container flex justify-center w-full">
         <h1 className="effect1 absolute top-[40%] text-3xl uppercase tracking-wide text-[#F6A9BD] z-10">
           hello there, welcome!
@@ -67,33 +67,13 @@ const AnimatedSection = () => {
         </p>
       </div>
 
-      <section className="grid grid-cols-10">
+      <div className="grid grid-cols-10">
         {[...Array(10)].map((_, index) => (
           <div key={index} className="item bg-[#F4E0E1] h-screen"></div>
         ))}
-      </section>
-
-      <footer className="absolute bottom-0 right-0 flex items-center justify-center w-full h-10 bg-[#F9E3E4] text-xs uppercase font-['Kanit',sans-serif]">
-        <p className="text-[#F6A9BD] tracking-wide px-2">
-          made by{" "}
-          <a
-            href="https://codepen.io/juliepark"
-            className="text-[#F0386B] transition-all duration-300 hover:bg-[#F6A9BD] hover:text-white"
-          >
-            julie
-          </a>{" "}
-          ♡ |{" "}
-          <a
-            href="https://instagram.com/julieparkim"
-            className="text-[#F0386B] transition-all duration-300 hover:bg-[#F6A9BD] hover:text-white"
-          >
-            instagram
-          </a>
-        </p>
-      </footer>
-    </div>
+      </div>
+    </section>
   );
 };
 
 export default AnimatedSection;
-

@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { Fragment } from "react";
-import AnimatedSection from "../components/AnimatedSection";
+import { Fragment, useState } from "react";
+import AnimatedSection from "./AnimatedSection";
 //
 export default function Welcome() {
   const [role, setRole] = useState(false);
