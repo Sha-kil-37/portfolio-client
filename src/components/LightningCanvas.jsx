@@ -116,7 +116,7 @@ const LightningCanvas = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <canvas ref={canvasRef} className="mt-30 h-100" />;
+  return <canvas ref={canvasRef} className="mt-30 h-100 w-auto" />;
 };
 
 export default LightningCanvas;

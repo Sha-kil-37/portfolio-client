@@ -3,12 +3,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* font family */
+/* tailwind css */
 @import "tailwindcss";
+/* tailwind css */
+/* dark css */
 @custom-variant dark (&:where(.dark, .dark *));
-/* components css */
+/* dark css */
+
+/* visitor css */
 @import "./visitor/common/common.css";
 @import "./visitor/theme/theme.css";
 @import "./visitor/navbar/navbar.css";
 @import "./animation/visitor/navbarAnimation.css";
 @import "./visitor/home/home.css";
-@import "./visitor/banner/banner.css"
+@import "./visitor/banner/banner.css";
+@import "./animation/visitor/textAnimation.css";
+@import "./visitor/text/text.css"; /* visitor css */

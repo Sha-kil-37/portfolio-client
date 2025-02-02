@@ -1,0 +1,6 @@
+.char {
+    font-size: 40px;
+    height: 40px;
+    display: inline-block;
+    animation: an 1s ease-out 1 both;
+  }
