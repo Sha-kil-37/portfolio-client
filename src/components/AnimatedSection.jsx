@@ -1,7 +1,11 @@
-import { Fragment, useEffect } from "react";
+import { useEffect, useState } from "react";
 import anime from "animejs";
+import { useNavigate } from "react-router-dom";
 //
 const AnimatedSection = () => {
+  const [fade, setFade] = useState(false);
+  const navigate = useNavigate();
+  //background animation
   useEffect(() => {
     // Background animation
     let tl = anime.timeline({
@@ -55,16 +59,23 @@ const AnimatedSection = () => {
       });
     }
   }, []);
-
+  // handle the animation
+  const handleNavigation = () => {
+    setFade(true);
+    setTimeout(() => navigate("/home"), 2000);
+  };
+  //
   return (
-    <section className="relative h-screen overflow-hidden block">
+    <section
+      className={fade ? "fade-out" : "relative h-screen overflow-hidden block"}
+    >
       <div>
         <h1 className="effect1 uppercase tracking-wide text-primary font-bold text-5xl font-primary text-center">
           hello there, welcome! to my portfolio version 1.0
         </h1>
-        <button
-          onClick={() => navigator("/home")}
-          className="text text-center inline-block cursor-pointer px-2 py-1 text-dark bg-primary left-[50%] translate-x-[-50%] font-primary"
+        <button type="button"
+          onClick={handleNavigation}
+          className="text text-center inline-block cursor-pointer px-2 py-1 text-dark bg-primary left-[50%] translate-x-[-50%] font-primary text-lg"
         >
           more about
         </button>
