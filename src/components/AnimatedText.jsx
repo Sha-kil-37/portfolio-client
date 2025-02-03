@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 const AnimatedText = ({ text }) => {
   const [animatedText, setAnimatedText] = useState([]);
-//
+  //
   useEffect(() => {
     const animationDelay = 6;
-    const chars = text.split("" ).map((char, i) => (
+    const chars = text.split("").map((char, i) => (
       <span
         key={i}
         className="char"
@@ -17,13 +17,7 @@ const AnimatedText = ({ text }) => {
     setAnimatedText(chars);
   }, [text]);
 
-  return (
-    <p className="animated-text">{animatedText}</p>
-  );
+  return <h2 className="animated-text font-primary text-dark font-medium">{animatedText}</h2>;
 };
 
 export default AnimatedText;
-
-
-
-

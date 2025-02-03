@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 //
 const AnimatedSection = () => {
   const [fade, setFade] = useState(false);
+  const [version, setVersion] = useState(1);
   const navigate = useNavigate();
   //background animation
   useEffect(() => {
@@ -71,9 +72,11 @@ const AnimatedSection = () => {
     >
       <div>
         <h1 className="effect1 uppercase tracking-wide text-primary font-bold text-5xl font-primary text-center">
-          hello there, welcome! to my portfolio version 1.0
+          hello there, welcome! to my portfolio version
+          {/* condition diya website er version show korte hobe */}
         </h1>
-        <button type="button"
+        <button
+          type="button"
           onClick={handleNavigation}
           className="text text-center inline-block cursor-pointer px-2 py-1 text-dark bg-primary left-[50%] translate-x-[-50%] font-primary text-lg"
         >

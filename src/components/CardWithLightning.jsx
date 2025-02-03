@@ -1,5 +1,13 @@
-import { useEffect, useRef } from "react";
-//
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const images = [
+    "/src/assets/one.png",
+    "/src/assets/images/two.png",
+    "/src/assets/images/three.png",
+    "/src/assets/images/four.png"
+  ];
+
 const LightningCanvas = () => {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -7,13 +15,6 @@ const LightningCanvas = () => {
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    // Load PNG image
-    const image = new Image();
-    image.src = "/src/assets/shakil.png"; // Replace with your PNG image URL
-    image.onload = () => {
-      animate();
-    };
 
     const LEFT = "LEFT";
     const RIGHT = "RIGHT";
@@ -47,8 +48,6 @@ const LightningCanvas = () => {
       }
       draw() {
         if (Math.random() * 100000 < 50) {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
           let sx = this.x,
             sy = this.y,
             ex = sx + Math.floor(Math.random() * 30) - 15,
@@ -79,44 +78,68 @@ const LightningCanvas = () => {
     }
 
     const animate = () => {
-      // Draw default background
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, "#264e70"); // Dark blue
-      gradient.addColorStop(1, "#16213e"); // Deep blue
+      gradient.addColorStop(0, "#264e70");
+      gradient.addColorStop(1, "#16213e");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw PNG image with transparency
-      if (image.complete) {
-        ctx.drawImage(
-          image,
-          canvas.width / 4,
-          canvas.height / 4,
-          canvas.width / 2,
-          canvas.height / 2
-        );
-      }
-
       ctx.shadowColor = "aliceblue";
       ctx.shadowBlur = 10;
-
       lightnings.forEach((l) => {
         l.draw();
       });
-
       requestAnimationFrame(animate);
     };
+    animate();
 
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return <canvas ref={canvasRef} className="mt-30 h-100 w-auto" />;
+  return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full opacity-50" />;
 };
 
-export default LightningCanvas;
+const ImageSlider = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative w-80 h-80 overflow-hidden rounded-xl shadow-xl">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={images[index]}
+          src={images[index]}
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          transition={{ duration: 0.5 }}
+          className="w-full h-full object-cover rounded-xl"
+        />
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const CardWithLightning = () => {
+  return (
+    <div className="relative flex items-center justify-center min-h-screen bg-black">
+      <LightningCanvas />
+      <div className="relative z-10 bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-2xl flex items-center justify-center">
+        <ImageSlider />
+      </div>
+    </div>
+  );
+};
+
+export default CardWithLightning;
