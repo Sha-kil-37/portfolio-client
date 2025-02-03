@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import { ThemeContext } from "../utils/theme/ThemeContext";
 import ToggleTheme from "./ToggleTheme";
-import MusicBar from "./MusicBar";
+import SoundBar from "./SoundBar";
 //
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, setDarkMode } = ThemeContext();
   const [scroll, setScroll] = useState(false);
-
   //
   // handle scroll
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 10);
@@ -40,7 +38,7 @@ const Navbar = () => {
             <li className="hover:underline">Contact</li>
           </ul>
           <ToggleTheme onClick={setDarkMode} theme={theme} />
-          <MusicBar />
+          <SoundBar />
         </div>
         {/* Mobile navbar */}
         <div className="md:hidden flex justify-between items-center">
@@ -60,8 +58,6 @@ const Navbar = () => {
             <li className="hover:underline">Services</li>
             <li className="hover:underline">Contact</li>
             <ToggleTheme onClick={setDarkMode} theme={theme} />
-            <MusicBar />
-            <MusicPlayer />
           </ul>
         )}
       </nav>

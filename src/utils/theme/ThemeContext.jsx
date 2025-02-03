@@ -5,7 +5,7 @@ const MyThemeContext = createContext();
 // create a provider for the theme
 export const ThemeProvider = ({ children }) => {
   const themeControls = UseTheme();
-//
+  //
   return (
     <MyThemeContext.Provider value={themeControls}>
       {children}

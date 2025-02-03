@@ -4,16 +4,16 @@ import "./css/index.css";
 import AppRouter from "./routes/AppRouter";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./utils/theme/ThemeContext";
-import { AudioProvider } from "./utils/audio/AudioContext";
+import { MusicProvider } from "./utils/music/MusicContext";
 //
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
-      <AudioProvider>
+    <MusicProvider>
+      <ThemeProvider>
         <BrowserRouter>
           <AppRouter />
         </BrowserRouter>
-      </AudioProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </MusicProvider>
   </StrictMode>
 );
