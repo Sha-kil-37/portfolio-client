@@ -1,0 +1,18 @@
+@layer components{
+  .sound-bar {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+    gap: 4px;
+  }
+  
+  .bar {
+    width: 6px;
+    background-color: #00ff00;
+    animation: none;
+  }
+  
+  .sound-bar.animate .bar {
+    animation: soundBarAnimation 0.8s infinite ease-in-out;
+  }
+}

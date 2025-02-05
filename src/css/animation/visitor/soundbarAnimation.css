@@ -1,11 +1,11 @@
 @layer components {
-  @keyframes bounce {
+  @keyframes soundBarAnimation {
     0%,
     100% {
       height: 10px;
     }
     50% {
-      height: 25px;
+      height: 30px;
     }
   }
 }

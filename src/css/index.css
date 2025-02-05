@@ -21,6 +21,6 @@
 @import "./visitor/text/text.css";
 @import "./animation/visitor/fadeOut";
 @import "./visitor/fadeOut/fadeOut.css";
-@import "./animation/visitor/soundbarAnimation.css";
-@import "./visitor/sound/soundbar.css"; 
+@import "./animation/visitor/soundBarAnimation.css";
+@import "./visitor/soundBar/soundBar.css";
 /* visitor css */

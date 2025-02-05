@@ -1,15 +1,15 @@
-import { MusicContext } from "../utils/music/MusicContext";
+import { useMusic } from "../utils/music/MusicContext";
 
 const SoundBar = () => {
-  const { isPlaying } = MusicContext();
-  //
+  const { isPlaying } = useMusic();
+
   return (
-    <div className={`sound-bar ${isPlaying ? "playing" : ""}`}>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <div className={`sound-bar ${isPlaying ? "animate" : ""}`}>
+      <div className="bar"></div>
+      <div className="bar"></div>
+      <div className="bar"></div>
+      <div className="bar"></div>
+      <div className="bar"></div>
     </div>
   );
 };
