@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ThemeContext } from "../utils/theme/ThemeContext";
 import ToggleTheme from "./ToggleTheme";
-import SoundBar from "./SoundBar";
+import SoundIcon from "./SoundIcon";
 //
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +38,7 @@ const Navbar = () => {
             <li className="hover:underline">Contact</li>
           </ul>
           <ToggleTheme onClick={setDarkMode} theme={theme} />
-          <SoundBar />
+          <SoundIcon />
         </div>
         {/* Mobile navbar */}
         <div className="md:hidden flex justify-between items-center">

@@ -1,6 +1,4 @@
 import { useState, useRef } from "react";
-import { useMusic } from "../utils/music/MusicContext";
-
 export default function ToggleTheme({ onClick, theme }) {
   //
   //
@@ -8,7 +6,6 @@ export default function ToggleTheme({ onClick, theme }) {
   const audioRef = useRef(new Audio()); // Ref for the audio element
   const darkAudio = "/src/assets/audio/mymusic3.mp3"; // Replace with your actual file
   const lightAudio = "/src/assets/audio/mymusic1.mp3"; // Replace with your actual file
-  const { isPlaying, setIsPlaying } = useMusic();
 
   // play audio when theme is changed
   const playAudio = () => {
@@ -21,7 +18,6 @@ export default function ToggleTheme({ onClick, theme }) {
   function handleClick() {
     onClick();
     playAudio();
-    setIsPlaying(!isPlaying);
   }
 
   //
