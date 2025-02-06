@@ -11,7 +11,7 @@ const Banner = () => {
   return (
     <section className="mt-30 dark:bg-dark block">
       <AnimatedText text={text} />
-      <audio src="/src/assets/audio/mymusic1.mp3" controls>
+      <audio src="/src/assets/audio/mymusic3.mp3" controls>
         audio
       </audio>
       {/* <CardWithLightning /> */}

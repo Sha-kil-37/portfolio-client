@@ -23,5 +23,4 @@
 @import "./visitor/fadeOut/fadeOut.css";
 @import "./animation/visitor/soundBarAnimation.css";
 @import "./visitor/soundBar/soundBar.css";
-/* @import "./animation/visitor/cardStacksAnimation.css";
-@import "./visitor/cardStacks/cardStacks.css"; */
+@import "./visitor/cardStacks/cardStacks.css";
