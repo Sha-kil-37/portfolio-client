@@ -17,7 +17,11 @@ const AnimatedText = ({ text }) => {
     setAnimatedText(chars);
   }, [text]);
 
-  return <h2 className="animated-text font-primary text-dark font-medium">{animatedText}</h2>;
+  return (
+    <h2 className="animated-text font-primary font-medium dark:text-primary">
+      {animatedText}
+    </h2>
+  );
 };
 
 export default AnimatedText;

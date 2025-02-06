@@ -1,15 +1,13 @@
 import { useState, useRef } from "react";
 export default function ToggleTheme({ onClick, theme }) {
   //
-  //
   const [isTrue, setIsTrue] = useState(true); // Your condition state
   const audioRef = useRef(new Audio()); // Ref for the audio element
-  const darkAudio = "/src/assets/audio/mymusic3.mp3"; // Replace with your actual file
-  const lightAudio = "/src/assets/audio/mymusic1.mp3"; // Replace with your actual file
+  const toggleAudio = "/src/assets/audio/toggle.mp3"; // Audio URL for toggle on
 
   // play audio when theme is changed
   const playAudio = () => {
-    const selectedAudio = isTrue ? darkAudio : lightAudio;
+    const selectedAudio = isTrue ? toggleAudio : toggleAudio;
     audioRef.current.src = selectedAudio; // Set the audio source
     audioRef.current.play(); // Play the audio
     setIsTrue(!isTrue); // Toggle condition (optional)

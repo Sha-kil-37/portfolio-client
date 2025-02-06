@@ -19,10 +19,9 @@
 @import "./visitor/banner/banner.css";
 @import "./animation/visitor/textAnimation.css";
 @import "./visitor/text/text.css";
-@import "./animation/visitor/fadeOut";
+@import "./animation/visitor/fadeOutAnimation.css";
 @import "./visitor/fadeOut/fadeOut.css";
 @import "./animation/visitor/soundBarAnimation.css";
 @import "./visitor/soundBar/soundBar.css";
-
-
-
+/* @import "./animation/visitor/cardStacksAnimation.css";
+@import "./visitor/cardStacks/cardStacks.css"; */

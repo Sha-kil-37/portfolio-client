@@ -1,3 +1,5 @@
-.fade-out {
+@layer components {
+  .fade-out {
     animation: fadeOut 0.5s forwards;
+  }
 }
