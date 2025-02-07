@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 //
 const AnimatedSection = () => {
   const [fade, setFade] = useState(false);
-  const [version, setVersion] = useState(1);
+  // const [version, setVersion] = useState(1); //version number
   const navigate = useNavigate();
   //background animation
   useEffect(() => {

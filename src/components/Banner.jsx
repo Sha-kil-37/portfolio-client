@@ -18,10 +18,10 @@ const Banner = () => {
   //
   return (
     <section className="mt-30 py-20 dark:bg-dark flex justify-between items-center">
-      <div >
-        <AnimatedText text={text} />
+      <div>
+        <AnimatedText text={text} className="text-primary font-primary" />
       </div>
-      <div >
+      <div>
         <CardStacks images={images} />
       </div>
     </section>

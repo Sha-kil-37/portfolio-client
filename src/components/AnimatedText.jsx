@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-
-const AnimatedText = ({ text }) => {
+import { Fragment, useEffect, useState } from "react";
+//
+const AnimatedText = ({ text, className = "" }) => {
   const [animatedText, setAnimatedText] = useState([]);
   //
   useEffect(() => {
@@ -18,9 +18,9 @@ const AnimatedText = ({ text }) => {
   }, [text]);
 
   return (
-    <h2 className="animated-text font-primary font-medium dark:text-primary">
-      {animatedText}
-    </h2>
+    <Fragment>
+      <h2 className={`animated-text ${className}`}>{animatedText}</h2>
+    </Fragment>
   );
 };
 
