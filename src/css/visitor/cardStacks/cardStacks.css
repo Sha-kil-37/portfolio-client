@@ -1,229 +1,61 @@
 @layer components {
-  .card-stacks{
-    border: 1px solid red;
-  }
-  ul.cards {
-    width: 660px;
-    margin: 0 auto 20px;
+  /* Card Stack Container */
+  .card-stack {
+    position: relative;
+    width: 300px;
     height: 300px;
-    list-style-type: none;
-    position: relative;
-    padding: 20px 0;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+  }
 
-  }
-  
-  ul.cards li.card {
-    background: #fff;
-    overflow: hidden;
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+  /* Individual Card */
+  .card {
     position: absolute;
-    left: 0px;
-    box-shadow: 1px 2px 2px 0 #aaa;
-    transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.12);
-  }
-  
-  ul.cards li.card img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  ul.cards li.card div.content {
-    padding: 5px 10px;
-  }
-  
-  /* Adjusted card positioning for 6 cards */
-  ul.cards li.card.card-1 {
-    z-index: 6;
-    transform: rotateZ(-2deg);
-  }
-  
-  ul.cards li.card.card-2 {
-    z-index: 5;
-    transform: rotateZ(-7deg);
-    transition-delay: 0.05s;
-  }
-  
-  ul.cards li.card.card-3 {
-    z-index: 4;
-    transform: rotateZ(5deg);
-    transition-delay: 0.1s;
-  }
-  
-  ul.cards li.card.card-4 {
-    z-index: 3;
-    transform: rotateZ(-3deg);
-    transition-delay: 0.15s;
-  }
-  
-  ul.cards li.card.card-5 {
-    z-index: 2;
-    transform: rotateZ(6deg);
-    transition-delay: 0.2s;
-  }
-  
-  ul.cards li.card.card-6 {
-    z-index: 1;
-    transform: rotateZ(-4deg);
-    transition-delay: 0.25s;
-  }
-  
-  /* Transition effect */
-  ul.cards.transition li.card {
-    transform: rotateZ(0deg);
-  }
-  
-  ul.cards.transition li.card.card-1 {
-    left: 440px;
-  }
-  
-  ul.cards.transition li.card.card-2 {
-    left: 220px;
-  }
-  
-  ul.cards.transition li.card.card-3 {
-    left: 0px;
-  }
-  
-  ul.cards.transition li.card.card-4 {
-    left: 440px;
-    top: 220px;
-  }
-  
-  ul.cards.transition li.card.card-5 {
-    left: 220px;
-    top: 220px;
-  }
-  
-  ul.cards.transition li.card.card-6 {
-    left: 0px;
-    top: 220px;
-  }
-  
-  /* Stacked Cards */
-  ul.card-stacks {
-    width: 660px;
-    list-style-type: none;
-    margin: 0 auto 20px;
-    padding: 0;
-    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
     cursor: pointer;
-    height: 700px;
   }
-  
-  ul.card-stacks li.stack {
-    position: absolute;
-    left: 0px;
-    transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.02);
+
+  /* Stacking Effect */
+  .card:nth-child(1) {
+    transform: translateY(-30px) rotate(-5deg);
   }
-  
-  ul.card-stacks li.stack ul.cards-down {
-    position: relative;
-    margin: 0 0 20px;
-    padding: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  .card:nth-child(2) {
+    transform: translateY(-20px) rotate(-3deg);
   }
-  
-  ul.card-stacks li.stack ul.cards-down li.card {
-    transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.22);
-    left: 0px;
-    transition-delay: 0.4s;
-    background: #fff;
-    overflow: hidden;
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
-    position: absolute;
-    top: 0px;
-    box-shadow: 1px 2px 2px 0 #aaa;
+  .card:nth-child(3) {
+    transform: translateY(-10px) rotate(-2deg);
   }
-  
-  ul.card-stacks li.stack ul.cards-down li.card img {
-    max-width: 100%;
-    height: auto;
+  .card:nth-child(4) {
+    transform: translateY(0px) rotate(0deg);
   }
-  
-  ul.card-stacks li.stack ul.cards-down li.card div.content {
-    padding: 5px 10px;
+  .card:nth-child(5) {
+    transform: translateY(10px) rotate(2deg);
   }
-  
-  /* Stack 6 cards */
-  ul.card-stacks li.stack ul.cards-down li.card.card-1 {
-    z-index: 6;
-    transform: rotateZ(-2deg);
+  .card:nth-child(6) {
+    transform: translateY(20px) rotate(3deg);
   }
-  
-  ul.card-stacks li.stack ul.cards-down li.card.card-2 {
-    z-index: 5;
-    transform: rotateZ(-7deg);
+
+  /* Animation when card moves to back */
+  .card-stack .card:first-child {
+    animation: moveToBack 0.5s ease-in-out forwards;
   }
-  
-  ul.card-stacks li.stack ul.cards-down li.card.card-3 {
-    z-index: 4;
-    transform: rotateZ(5deg);
+
+  /* Keyframe Animation */
+  @keyframes moveToBack {
+    0% {
+      transform: translateY(-30px) rotate(-5deg);
+    }
+    100% {
+      transform: translateY(30px) rotate(5deg) scale(0.9);
+      opacity: 0;
+    }
   }
-  
-  ul.card-stacks li.stack ul.cards-down li.card.card-4 {
-    z-index: 3;
-    transform: rotateZ(-3deg);
-  }
-  
-  ul.card-stacks li.stack ul.cards-down li.card.card-5 {
-    z-index: 2;
-    transform: rotateZ(6deg);
-  }
-  
-  ul.card-stacks li.stack ul.cards-down li.card.card-6 {
-    z-index: 1;
-    transform: rotateZ(-4deg);
-  }
-  
-  /* Adjust transitions for stacks */
-  ul.card-stacks.transition li.stack.stack-1 {
-    left: 0px;
-  }
-  
-  ul.card-stacks.transition li.stack.stack-2 {
-    left: 220px;
-  }
-  
-  ul.card-stacks.transition li.stack.stack-3 {
-    left: 440px;
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card {
-    transform: rotateZ(0deg);
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card.card-1 {
-    top: 440px;
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card.card-2 {
-    top: 220px;
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card.card-3 {
-    top: 0px;
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card.card-4 {
-    top: 440px;
-    left: 440px;
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card.card-5 {
-    top: 220px;
-    left: 220px;
-  }
-  
-  ul.card-stacks.transition li.stack ul.cards-down li.card.card-6 {
-    top: 0px;
-    left: 0px;
-  }
- 
 }
