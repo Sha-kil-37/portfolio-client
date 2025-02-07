@@ -1,189 +1,50 @@
-import { Fragment, useState } from "react";
-
+import { useState, useCallback } from "react";
+//
 const CardStacks = () => {
-  const [cardsTransition, setCardsTransition] = useState(false);
-  const [stacksTransition, setStacksTransition] = useState(false);
-  const [splitTransition, setSplitTransition] = useState(false);
-  const [splitDelayTransition, setSplitDelayTransition] = useState(false);
+  const [isTransition, setIsTransition] = useState(false);
   //
+  const handleToggle = useCallback(() => {
+    setIsTransition((prev) => !prev);
+  }, []);
+
+  // 6 unique images shared among 3 stacks
+  const cards = [
+    { image: "/src/assets/images/apples-7465439_1280.jpg", title: "Card 1" },
+    { image: "/src/assets/images/canyon-9215914_1280.jpg", title: "Card 2" },
+    { image: "/src/assets/images/elephants-9175178_1280.jpg", title: "Card 3" },
+    { image: "/src/assets/images/flower-9189857_1280.jpg", title: "Card 4" },
+    { image: "/src/assets/images/one.png", title: "Card 5" },
+    { image: "/src/assets/images/shakil.png", title: "Card 6" },
+  ];
+
+  // Divide the 6 cards into 3 stacks (2 cards per stack)
+  const stacks = [
+    cards.slice(0, 2), // First 2 cards
+    cards.slice(2, 4), // Next 2 cards
+    cards.slice(4, 6), // Last 2 cards
+  ];
+
   return (
-    <Fragment>
-      <ul
-        className={`cards ${cardsTransition ? "transition" : ""}`}
-        onClick={() => setCardsTransition(!cardsTransition)}
-      >
-        <li className="title">
-          <h2>Slide right</h2>
-        </li>
-        <li className="card card-1">
-          <img src="/src/assets/images/five.png" alt="City" />
-          <div className="content">
-            <h1>Card 1 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-        <li className="card card-2">
-          <img src="/src/assets/images/four.png" alt="Food" />
-          <div className="content">
-            <h1>Card 2 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-        <li className="card card-3">
-          <img src="http://lorempixel.com/400/250/animals" alt="Animals" />
-          <div className="content">
-            <h1>Card 3 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-      </ul>
-      <hr />
-      <ul
-        className={`card-stacks ${stacksTransition ? "transition" : ""}`}
-        onClick={() => setStacksTransition(!stacksTransition)}
-      >
-        <li className="title">
-          <h2>Expand to grid</h2>
-        </li>
-        <li className="stack stack-1">
+    <ul
+      className={`card-stacks ${isTransition ? "transition" : ""}`}
+      onClick={handleToggle}
+    >
+      {stacks.map((stack, stackIndex) => (
+        <li key={stackIndex} className={`stack stack-${stackIndex + 1}`}>
           <ul className="cards-down">
-            <li className="card card-1">
-              <img src="http://lorempixel.com/401/250/city" alt="City" />
-              <div className="content">
-                <h1>Card 1 Title</h1>
-                <p>Stack 1</p>
-              </div>
-            </li>
-            <li className="card card-2">
-              <img src="http://lorempixel.com/401/250/food" alt="Food" />
-              <div className="content">
-                <h1>Card 2 Title</h1>
-                <p>Stack 1</p>
-              </div>
-            </li>
-            <li className="card card-3">
-              <img src="http://lorempixel.com/401/250/animals" alt="Animals" />
-              <div className="content">
-                <h1>Card 3 Title</h1>
-                <p>Stack 1</p>
-              </div>
-            </li>
+            {stack.map((card, cardIndex) => (
+              <li key={cardIndex} className={`card card-${cardIndex + 1}`}>
+                <img src={card.image} alt={card.title} />
+                {/* <div className="content">
+                  <h1>{card.title}</h1>
+                  <p>Stack {stackIndex + 1}</p>
+                </div> */}
+              </li>
+            ))}
           </ul>
         </li>
-        <li className="stack stack-2">
-          <ul className="cards-down">
-            <li className="card card-1">
-              <img src="http://lorempixel.com/402/250/city" alt="City" />
-              <div className="content">
-                <h1>Card 1 Title</h1>
-                <p>Stack 2</p>
-              </div>
-            </li>
-            <li className="card card-2">
-              <img src="http://lorempixel.com/402/250/food" alt="Food" />
-              <div className="content">
-                <h1>Card 2 Title</h1>
-                <p>Stack 2</p>
-              </div>
-            </li>
-            <li className="card card-3">
-              <img src="http://lorempixel.com/402/250/animals" alt="Animals" />
-              <div className="content">
-                <h1>Card 3 Title</h1>
-                <p>Stack 2</p>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li className="stack stack-3">
-          <ul className="cards-down">
-            <li className="card card-1">
-              <img src="http://lorempixel.com/403/250/city" alt="City" />
-              <div className="content">
-                <h1>Card 1 Title</h1>
-                <p>Stack 3</p>
-              </div>
-            </li>
-            <li className="card card-2">
-              <img src="http://lorempixel.com/403/250/food" alt="Food" />
-              <div className="content">
-                <h1>Card 2 Title</h1>
-                <p>Stack 3</p>
-              </div>
-            </li>
-            <li className="card card-3">
-              <img src="http://lorempixel.com/403/250/animals" alt="Animals" />
-              <div className="content">
-                <h1>Card 3 Title</h1>
-                <p>Stack 3</p>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <hr />
-      <ul
-        className={`cards-split ${splitTransition ? "transition" : ""}`}
-        onClick={() => setSplitTransition(!splitTransition)}
-      >
-        <li className="title">
-          <h2>Split from middle</h2>
-        </li>
-        <li className="card card-1">
-          <img src="http://lorempixel.com/400/250/city" alt="City" />
-          <div className="content">
-            <h1>Card 1 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-        <li className="card card-2">
-          <img src="http://lorempixel.com/400/250/food" alt="Food" />
-          <div className="content">
-            <h1>Card 2 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-        <li className="card card-3">
-          <img src="http://lorempixel.com/400/250/animals" alt="Animals" />
-          <div className="content">
-            <h1>Card 3 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-      </ul>
-      <hr />
-      <ul
-        className={`cards-split-delay ${
-          splitDelayTransition ? "transition" : ""
-        }`}
-        onClick={() => setSplitDelayTransition(!splitDelayTransition)}
-      >
-        <li className="title">
-          <h2>Delayed split from middle</h2>
-        </li>
-        <li className="card card-1">
-          <img src="http://lorempixel.com/400/250/city" alt="City" />
-          <div className="content">
-            <h1>Card 1 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-        <li className="card card-2">
-          <img src="http://lorempixel.com/400/250/food" alt="Food" />
-          <div className="content">
-            <h1>Card 2 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-        <li className="card card-3">
-          <img src="http://lorempixel.com/400/250/animals" alt="Animals" />
-          <div className="content">
-            <h1>Card 3 Title</h1>
-            <p>Card description</p>
-          </div>
-        </li>
-      </ul>
-    </Fragment>
+      ))}
+    </ul>
   );
 };
 
