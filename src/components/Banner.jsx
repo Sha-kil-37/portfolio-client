@@ -21,7 +21,7 @@ const Banner = () => {
       <div>
         <AnimatedText text={text} className="text-primary font-primary" />
       </div>
-      <div>
+      <div className="px-10 py-10"> 
         <CardStacks images={images} />
       </div>
     </section>

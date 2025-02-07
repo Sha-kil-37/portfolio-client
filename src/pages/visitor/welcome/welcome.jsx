@@ -1,10 +1,12 @@
-import { Fragment } from "react";
-import Welcome from "../../../components/Welcome";
+import { lazy, Suspense } from "react";
+import Loader from "../../../components/Loader";
+const Welcome = lazy(() => import("./welcome"));
 //
 export default function welcome() {
+  //
   return (
-    <Fragment>
+    <Suspense fallback={<Loader />}>
       <Welcome />
-    </Fragment>
+    </Suspense>
   );
 }
