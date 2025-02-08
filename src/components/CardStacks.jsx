@@ -15,6 +15,10 @@ const CardStack = ({ images }) => {
           className="card"
           style={{
             backgroundImage: `url(${image})`,
+            // kaj ace
+            // backgroundRepeat: "no-repeat",
+            // backgroundSize: "cover",
+            // backgroundPosition: "center",
             zIndex: cards.length - index,
           }}
           onClick={index === 0 ? handleClick : null}

@@ -17,8 +17,6 @@
 @import "./animation/visitor/navbarAnimation.css";
 @import "./visitor/home/home.css";
 @import "./visitor/banner/banner.css";
-@import "./animation/visitor/animatedTextAnimation.css";
-@import "./visitor/animatedText/animatedText.css";
 @import "./animation/visitor/fadeOutAnimation.css";
 @import "./visitor/fadeOut/fadeOut.css";
 @import "./animation/visitor/soundBarAnimation.css";
