@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ThemeContext } from "../utils/theme/ThemeContext";
+import { ThemeContext } from "../utils/visitor/theme/ThemeContext";
 import ToggleTheme from "./ToggleTheme";
 import SoundIcon from "./SoundIcon";
 //

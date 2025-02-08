@@ -1,12 +1,12 @@
 import { lazy, Suspense } from "react";
 import Loader from "../../../components/Loader";
-const Welcome = lazy(() => import("./welcome"));
+const WelcomePage = lazy(() => import("../../../components/Welcome"));
 //
 export default function welcome() {
   //
   return (
     <Suspense fallback={<Loader />}>
-      <Welcome />
+      <WelcomePage />
     </Suspense>
   );
 }

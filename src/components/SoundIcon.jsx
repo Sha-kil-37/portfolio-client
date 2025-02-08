@@ -1,5 +1,5 @@
 // SoundIcon.js
-import { useSound } from '../utils/sound/SoundContext';
+import { useSound } from '../utils/visitor/sound/SoundContext';
 
 
 const SoundIcon = () => {

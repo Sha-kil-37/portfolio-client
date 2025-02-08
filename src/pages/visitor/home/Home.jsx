@@ -1,14 +1,17 @@
-import { Fragment } from "react";
+import { Fragment, lazy, Suspense } from "react";
 import Banner from "../../../components/Banner";
-import MainLayout from "../../../layout/visitor/MainLayout";
+import Loader from "../../../components/Loader";
+const HomePage = lazy(() => import("../../../layout/visitor/MainLayout"));
 //
 export default function Home() {
   //
   return (
-    <MainLayout>
-      <Fragment>
-        <Banner />
-      </Fragment>
-    </MainLayout>
+    <Suspense fallback={<Loader />}>
+      <HomePage>
+        <Fragment>
+          <Banner />
+        </Fragment>
+      </HomePage>
+    </Suspense>
   );
 }

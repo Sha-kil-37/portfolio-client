@@ -26,3 +26,4 @@
 @import "./visitor/cardStacks/cardStacks.css";
 @import "./visitor/loader/loader.css";
 @import "./animation/visitor/loaderAnimation.css";
+@import "./visitor/backgroundScroll/backgroundScroll.css";
