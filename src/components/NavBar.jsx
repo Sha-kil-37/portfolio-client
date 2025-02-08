@@ -24,7 +24,7 @@ const Navbar = () => {
       className={`${
         scroll
           ? "sticky top-0 left-0 w-full z-20 dark:bg-dark/20 backdrop-blur-md text-white py-4"
-          : "py-4 backdrop-blur-md dark:bg-primary/20 fixed top-0 left-0 w-full z-20"
+          : "py-4 backdrop-blur-md dark:bg-primary/20 fixed top-0 left-0 w-full z-20 transition-all"
       }`}
     >
       <nav>

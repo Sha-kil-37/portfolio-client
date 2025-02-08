@@ -1,5 +1,8 @@
 import AnimatedText from "./AnimatedText";
 import CardStacks from "./CardStacks";
+import { motion } from "framer-motion";
+import AnimatedGradientText from "./AnimatedGradientText";
+
 //
 const images = [
   "/src/assets/images/apples-7465439_1280.jpg",
@@ -13,17 +16,22 @@ const images = [
 const Banner = () => {
   let text =
     "Lorem ipsum ficiis illo ipsam doloribus veniam, iusto eaque alias quam debitis praesentium natus eos.";
-  //
 
   //
   return (
-    <section className="mt-30 py-20 dark:bg-dark flex justify-between items-center">
+    <section className="py-50 dark:bg-dark flex justify-between items-center">
       <div>
-        <AnimatedText text={text} className="text-primary font-primary" />
+        <AnimatedGradientText text={text} className="font-bold text-7xl"  />
+        <AnimatedText text={text} className="text-[#DA498D] font-primary text-5xl" />
       </div>
-      <div className="px-10 py-10">
+      <motion.p
+        initial={{ opacity: 0, x: 100 }} // Start hidden, move from right
+        animate={{ opacity: 1, x: 0 }} // Animate to visible
+        transition={{ duration: 1, delay: 0.5 }} // Delay for smooth effect
+        className="px-4"
+      >
         <CardStacks images={images} />
-      </div>
+      </motion.p>
     </section>
   );
 };

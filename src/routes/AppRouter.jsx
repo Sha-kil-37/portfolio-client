@@ -3,6 +3,7 @@ import One from "../components/One";
 import Two from "../components/Two";
 import Home from "../pages/visitor/home/Home";
 import Welcome from "../pages/visitor/welcome/welcome";
+import Test from "../components/Test";
 
 //
 export default function AppRouter() {
@@ -15,7 +16,7 @@ export default function AppRouter() {
         <Route path="one" element={<One />} />
         <Route path="two" element={<Two />} />
       </Route>
-      {/* <Route path="/test" element={<SoundBar />}></Route> */}
+      <Route path="/test" element={<Test />}></Route>
 
       {/* visitor route */}
       {/* admin route */}

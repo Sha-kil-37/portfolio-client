@@ -1,0 +1,16 @@
+@layer components {
+  .gradient-text {
+    color: transparent;
+    background-image: linear-gradient(
+      to right,
+      #655d8a,
+      #ff0,
+      #0ff,
+      #ffebd3,
+      #257180
+    );
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+    background-size: 1000%;
+  }
+}

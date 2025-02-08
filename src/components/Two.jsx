@@ -1,12 +1,8 @@
 
 export default function Two() {
   return (
-    <div className="text-5xl font-bold text-green-400">
-      Two Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-      reiciendis maiores delectus odit magnam sunt, sit exercitationem totam
-      explicabo itaque recusandae ratione in repellendus nostrum similique
-      consequatur harum ad asperiores error dolorum a ex dolorem dicta
-      veritatis? Deserunt, rem voluptatum?
+    <div className="bg-secondary">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque architecto, sed nisi repellendus nobis nihil corporis magni quod, nostrum amet animi explicabo, excepturi repudiandae laudantium maiores deleniti vel! Eum ab aspernatur quam commodi, natus enim odit nisi dolore consectetur architecto nobis molestiae mollitia eius dolor voluptatum eaque? Doloribus aliquam debitis porro, perspiciatis, quam neque ipsum distinctio in ad rerum magnam asperiores. Porro, recusandae nam? Quas, dolorem cupiditate a illum voluptatum, mollitia laudantium praesentium quae quos, sed eveniet cum corrupti molestias necessitatibus dignissimos vero error fuga cumque ex minima! Dolores a esse minima nihil libero cum, eius ex soluta molestiae, fuga commodi illum! Porro cum, aliquid optio commodi aspernatur, eaque alias quas officia dignissimos molestias cupiditate voluptatibus quae rem deserunt, enim aliquam veritatis minus? Fugiat mollitia corporis cupiditate eum error eligendi aspernatur quae dolore possimus veritatis, vero, a laboriosam maxime ad. Voluptas iusto repudiandae dolorum quasi in maiores tenetur ullam, ducimus sed cumque recusandae! Qui vel numquam non voluptates architecto deleniti, vitae rerum natus. Dolore, beatae. Adipisci excepturi laboriosam totam repellendus cumque nisi? Ab amet illo optio excepturi voluptatum, aut consectetur dolore dignissimos doloribus quasi atque labore harum necessitatibus doloremque ducimus blanditiis. Aliquid perferendis eos sit ad fugiat corrupti quae incidunt voluptatum maxime aut in odit, impedit unde vero reiciendis debitis expedita possimus aspernatur laudantium veritatis dolores eveniet! Quos, numquam rem. Illo quisquam reprehenderit facilis culpa quasi fuga aliquid sapiente dolorem nulla amet velit aperiam nemo, iusto voluptatibus! Pariatur consequatur, maxime temporibus eius voluptas, asperiores tempore nobis iusto non necessitatibus officia dicta corporis minima blanditiis? Nulla omnis nemo fugit laudantium! Ipsa sint consequuntur, nihil quisquam error, iste velit voluptas quos rem rerum nesciunt facere ab nisi veritatis asperiores impedit maiores corporis optio voluptates? Eaque consectetur est nisi nesciunt magni sunt, mollitia sint dolor placeat! Minima rem magni dolores rerum expedita sapiente!</p>
     </div>
   );
 }
