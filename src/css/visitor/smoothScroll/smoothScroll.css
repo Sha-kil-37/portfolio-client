@@ -1,0 +1,5 @@
+@layer components {
+  .js-scroll {
+    will-change: transform;
+  }
+}

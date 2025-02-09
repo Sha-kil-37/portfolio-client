@@ -1,33 +1,41 @@
+import { motion } from "framer-motion";
 export default function Footer() {
+  //
   return (
     <footer className="bg-dark text-white py-4 text-center">
-      <h2>This is a footer</h2>
-      <p className="text-yellow-400">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem mollitia
-        repellendus magnam et aliquid provident! Ab necessitatibus ipsum quasi
-        nam quas dolores maxime obcaecati nulla dolore aliquid libero ullam,
-        corporis enim cupiditate nemo expedita eveniet sapiente repudiandae esse
-        nobis minima veritatis impedit. Vero sequi odio fuga ducimus aliquid
-        fugiat ab aspernatur esse optio et ipsa quod itaque, quam repudiandae
-        quaerat impedit facere ut pariatur earum soluta eveniet eius quisquam
-        cupiditate. Laborum error exercitationem repudiandae. Eligendi quaerat
-        rem, molestias similique quibusdam a magnam debitis obcaecati libero
-        porro soluta delectus dignissimos officia nobis voluptate quisquam
-        doloribus. Neque reiciendis, exercitationem sed aliquid qui fugit,
-        sapiente eligendi a molestiae tempore corrupti est unde deserunt quas,
-        quibusdam ratione voluptatum hic cupiditate. Necessitatibus laboriosam
-        praesentium tempore, adipisci laudantium eius facilis molestiae
-        repellendus. Corrupti exercitationem, deleniti unde asperiores
-        laboriosam temporibus tempora fugiat explicabo facilis reprehenderit
-        odio maiores at quidem. Similique eius labore nemo, esse eligendi
-        pariatur officiis numquam id modi, animi quo ipsum consequatur molestiae
-        praesentium ducimus neque laboriosam? Esse doloremque numquam iusto
-        voluptates beatae molestiae rerum, voluptas quia quos modi? Perspiciatis
-        neque mollitia nemo ut, maxime iure at ex laudantium vel earum esse iste
-        quos sed ullam? Veniam amet, consequatur ut earum vel deserunt explicabo
-        est!
-      </p>
-      <p>
+      <motion.div
+        initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
+        animate={{ opacity: 1, x: 0 }} // Animate to visible
+        transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
+      >
+        <h2 className="text-red-500 font-bold text-5xl font-primary">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem
+          mollitia repellendus magnam et aliquid provident! Ab necessitatibus
+          ipsum quasi nam quas dolores maxime obcaecati nulla dolore aliquid
+          libero ullam, corporis enim cupiditate nemo expedita eveniet sapiente
+          repudiandae esse nobis minima veritatis impedit. Vero sequi odio fuga
+          ducimus aliquid fugiat ab aspernatur esse optio et ipsa quod itaque,
+          quam repudiandae quaerat impedit facere ut pariatur earum soluta
+          eveniet eius quisquam cupiditate. Laborum error exercitationem
+          repudiandae. Eligendi quaerat rem, molestias similique quibusdam a
+          magnam debitis obcaecati libero porro soluta delectus dignissimos
+          officia nobis voluptate quisquam doloribus. Neque reiciendis,
+          exercitationem sed aliquid qui fugit, sapiente eligendi a molestiae
+          tempore corrupti est unde deserunt quas, quibusdam ratione voluptatum
+          hic cupiditate. Necessitatibus laboriosam praesentium tempore,
+          adipisci laudantium eius facilis molestiae repellendus. Corrupti
+          exercitationem, deleniti unde asperiores laboriosam temporibus tempora
+          fugiat explicabo facilis reprehenderit odio maiores at quidem.
+          Similique eius labore nemo, esse eligendi pariatur officiis numquam id
+          modi, animi quo ipsum consequatur molestiae praesentium ducimus neque
+          laboriosam? Esse doloremque numquam iusto voluptates beatae molestiae
+          rerum, voluptas quia quos modi? Perspiciatis neque mollitia nemo ut,
+          maxime iure at ex laudantium vel earum esse iste quos sed ullam?
+          Veniam amet, consequatur ut earum vel deserunt explicabo est!
+        </h2>
+      </motion.div>
+
+      <p className="text-yellow-300 font-bold text-5xl font-primary">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
         distinctio commodi quam, porro vero saepe debitis nobis. Cum nulla iusto
         eaque qui iste iure sed ipsam molestias beatae. Ut tempora deserunt

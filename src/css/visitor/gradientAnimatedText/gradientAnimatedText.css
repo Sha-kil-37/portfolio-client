@@ -3,10 +3,10 @@
     color: transparent;
     background-image: linear-gradient(
       to right,
-      #655d8a,
-      #ff0,
-      #0ff,
-      #ffebd3,
+      silver,
+      purple,
+      yellow,
+      skyblue,
       #257180
     );
     -webkit-background-clip: text;

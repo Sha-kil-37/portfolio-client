@@ -26,5 +26,5 @@
 @import "./animation/visitor/loaderAnimation.css";
 @import "./animation/visitor/gradientTextAnimation.css";
 @import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
-
+@import "./visitor/smoothScroll/smoothScroll.css";
 
