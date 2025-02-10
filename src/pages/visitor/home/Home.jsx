@@ -8,7 +8,9 @@ const HomePage = lazy(() => import("../../../layout/visitor/MainLayout"));
 export default function Home() {
   //
   const [isLoaded, setIsLoaded] = useState(false);
-
+  for (let index = 0; index < 500; index++) {
+    console.log(index);
+  }
   //
   return (
     <Suspense
