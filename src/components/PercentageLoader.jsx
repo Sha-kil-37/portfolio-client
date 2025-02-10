@@ -20,7 +20,7 @@ const PercentageLoader = ({ onComplete }) => {
         if (newProgress >= 100) {
           clearInterval(progressInterval);
           clearInterval(dotsInterval);
-          setTimeout(() => onComplete(), 1000); // Delay to let fade out finish
+          setTimeout(() => onComplete(), 500); // Delay to let fade out finish
           return 100;
         }
         return newProgress;
