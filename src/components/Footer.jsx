@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
   //
   return (
-    <footer className="py-20 bg-amber-100">
+    <footer>
       <motion.div
         initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
         animate={{ opacity: 1, x: 0 }} // Animate to visible
@@ -35,7 +35,7 @@ export default function Footer() {
         </h2>
       </motion.div>
 
-      <h2 className="text-yellow-300 font-bold text-5xl font-primary">
+      <h2 className="text-pink-300 font-bold text-5xl font-primary">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
         distinctio commodi quam, porro vero saepe debitis nobis. Cum nulla iusto
         eaque qui iste iure sed ipsam molestias beatae. Ut tempora deserunt

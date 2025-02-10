@@ -5,7 +5,7 @@ import AppRouter from "./routes/AppRouter";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./utils/visitor/theme/ThemeContext";
 import { SoundProvider } from "./utils/visitor/sound/SoundContext";
-import SoundListener from "./utils/visitor/sound/SoundListener";
+import SoundListener from "./hooks/visitor/SoundListener";
 //
 createRoot(document.getElementById("root")).render(
   <StrictMode>

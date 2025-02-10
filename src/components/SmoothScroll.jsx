@@ -1,44 +1,53 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import UseWindowSize from "../hooks/visitor/UseWindowSize";
 
 const SmoothScroll = ({ children }) => {
-  const scrollRef = useRef(null);
-  const [pageHeight, setPageHeight] = useState(0);
-  const speed = 0.05;
-  let offset = 0;
+  // 1.
+  const windowSize = UseWindowSize();
 
+  //2.
+  const scrollingContainerRef = useRef();
+
+  // 3.
+  const data = {
+    ease: 0.1,
+    current: 0,
+    previous: 0,
+    rounded: 0,
+  };
+
+  // 4.
   useEffect(() => {
-    const jsScroll = scrollRef.current;
-    if (!jsScroll) return;
+    setBodyHeight();
+  }, [windowSize.height]);
 
-    const updateBodyHeight = () => {
-      const height = jsScroll.scrollHeight; // Use scrollHeight instead of getBoundingClientRect()
-      setPageHeight(height);
-      document.body.style.height = `${height}px`;
-    };
+  const setBodyHeight = () => {
+    document.body.style.height = `${
+      scrollingContainerRef.current.getBoundingClientRect().height
+    }px`;
+  };
 
-    updateBodyHeight();
-    window.addEventListener("resize", updateBodyHeight);
-
-    const smoothScroll = () => {
-      offset += (window.pageYOffset - offset) * speed;
-      jsScroll.style.transform = `translateY(-${offset}px) translateZ(0)`;
-      requestAnimationFrame(smoothScroll);
-    };
-
-    smoothScroll();
-
-    return () => {
-      window.removeEventListener("resize", updateBodyHeight);
-    };
+  // 5.
+  useEffect(() => {
+    requestAnimationFrame(() => smoothScrollingHandler());
   }, []);
+  //
+  const smoothScrollingHandler = () => {
+    data.current = window.scrollY;
+    data.previous += (data.current - data.previous) * data.ease;
+    data.rounded = Math.round(data.previous * 100) / 100;
+
+    scrollingContainerRef.current.style.transform = `translateY(-${data.previous}px)`;
+
+    // Recursive call
+    requestAnimationFrame(() => smoothScrollingHandler());
+  };
 
   return (
-    <div ref={scrollRef} className="js-scroll will-change-transform" style={{ minHeight: pageHeight }}>
-      {children}
+    <div className="parent">
+      <div ref={scrollingContainerRef}>{children}</div>
     </div>
   );
 };
 
 export default SmoothScroll;
-
-

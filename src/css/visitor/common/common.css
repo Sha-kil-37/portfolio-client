@@ -8,7 +8,7 @@
   --color-primary: #ffebd3;
   --color-secondary: #0284c7;
   /* font family */
-  --font-primary: "Noto Sans", serif;
+  --font-primary: "Permanent Marker", serif;
 }
 
 @layer components {
@@ -17,7 +17,7 @@
   }
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    /* overflow-x: hidden;
+    overflow-y: scroll; */
   }
 }

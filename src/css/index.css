@@ -1,6 +1,6 @@
 /* font family */
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 /* font family */
 /* tailwind css */
@@ -17,14 +17,12 @@
 @import "./animation/visitor/navbarAnimation.css";
 @import "./visitor/home/home.css";
 @import "./visitor/banner/banner.css";
-@import "./animation/visitor/fadeOutAnimation.css";
-@import "./visitor/fadeOut/fadeOut.css";
 @import "./animation/visitor/soundBarAnimation.css";
 @import "./visitor/soundBar/soundBar.css";
 @import "./visitor/cardStacks/cardStacks.css";
-@import "./visitor/loader/loader.css";
-@import "./animation/visitor/loaderAnimation.css";
 @import "./animation/visitor/gradientTextAnimation.css";
 @import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
 @import "./visitor/smoothScroll/smoothScroll.css";
+@import "./visitor/header/header.css";
+@import "./visitor/droppingTexts/droppingTexts.css";
 

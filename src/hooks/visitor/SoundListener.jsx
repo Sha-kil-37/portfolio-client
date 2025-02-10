@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { useSound } from "./SoundContext";
-//
+import { useSound } from "../../utils/visitor/sound/SoundContext";
+// ...
 const SoundListener = () => {
   const { setIsMusicPlaying } = useSound();
   //
   useEffect(() => {
-    const audioElements = document.querySelectorAll("audio, video");
-
+    const audioElements = document.querySelectorAll("audio, video")
     const handlePlay = () => setIsMusicPlaying(true);
     const handlePause = () => setIsMusicPlaying(false);
     const handleEnded = () => setIsMusicPlaying(false);
