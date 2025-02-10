@@ -16,7 +16,7 @@ const Banner = () => {
   let text =
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus ipsam quod nam nihil sequi maiores, quisquam libero cum, repellat minima quos aliquid delectus omnis rem! Doloremque quae, autem minus, nostrum illo quo similique ratione facere veritatis velit commodi voluptate";
   //
-
+//
   return (
     <SmoothScroll>
       <section className="flex justify-between items-center">
