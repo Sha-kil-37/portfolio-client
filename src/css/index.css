@@ -12,7 +12,6 @@
 
 /* visitor css */
 @import "./visitor/common/common.css";
-@import "./visitor/theme/theme.css";
 @import "./visitor/navbar/navbar.css";
 @import "./animation/visitor/navbarAnimation.css";
 @import "./visitor/home/home.css";

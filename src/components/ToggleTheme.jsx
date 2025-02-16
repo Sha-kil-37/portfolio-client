@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { Moon, Sun,  } from "lucide-react";
 import { useState, useRef } from "react";
 export default function ToggleTheme({ onClick, theme }) {
   //
@@ -20,29 +22,28 @@ export default function ToggleTheme({ onClick, theme }) {
 
   //
   return (
-    <button htmlFor="theme" className="theme">
-      <span className="theme__toggle-wrap">
-        <input
-          onChange={handleClick}
-          id="theme"
-          className="theme__toggle"
-          type="checkbox"
-          role="switch"
-          checked={theme === "dark"}
-          name="theme"
-        />
-        <span className="theme__icon">
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-          <span className="theme__icon-part" />
-        </span>
-      </span>
-    </button>
+    <motion.div
+      initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
+      animate={{ opacity: 1, x: 0 }} // Animate to visible
+      transition={{ duration: 1, delay: 0.2 }} // Delay for
+    >
+      {theme === "dark" ? (
+        <button
+          onClick={handleClick}
+          className="focus:outline-none cursor-pointer"
+          title="Toggle light mode"
+        >
+          <Moon />
+        </button>
+      ) : (
+        <button
+          onClick={handleClick}
+          className="focus:outline-none cursor-pointer"
+          title="Toggle dark mode"
+        >
+         <Sun />
+        </button>
+      )}
+    </motion.div>
   );
 }

@@ -9,15 +9,13 @@
   --color-secondary: #0284c7;
   /* font family */
   --font-primary: "Permanent Marker", serif;
+
 }
 
 @layer components {
-  .container {
-    margin: 0 auto;
-  }
   html {
     scroll-behavior: smooth;
-    /* overflow-x: hidden;
-    overflow-y: scroll; */
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 }

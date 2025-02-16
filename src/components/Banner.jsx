@@ -1,6 +1,7 @@
 import CardStacks from "./CardStacks";
 import AnimatedGradientText from "./AnimatedGradientText";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 //
 const images = [
   "/src/assets/images/two.jpg",
@@ -17,6 +18,16 @@ const Banner = () => {
     "Hey there! I'm Shakil a full-stack web developer, and I love to build things for the web.";
   //
 
+  const audioRef = useRef(null);
+
+  const playAudio = () => {
+    audioRef.current.play();
+  };
+
+  const pauseAudio = () => {
+    audioRef.current.pause();
+  };
+  //
   return (
     <section className="flex justify-between items-center h-screen py-10 gap-10 container">
       <motion.div
@@ -36,6 +47,11 @@ const Banner = () => {
         <CardStacks images={images} />
       </motion.div>
     </section>
+    // <section className="block container-fluid">
+    //   <div className="px-2 py-2 bg-[#3D8D7A]">
+    //   <h1 className="font-primary font-bold text-5xl w-100vh text-center">Shakil</h1>
+    //   </div>
+    // </section>
   );
 };
 

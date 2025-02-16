@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../../components/NavBar";
 import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 import { motion } from "framer-motion";
 //
 export default function MainLayout({ children }) {
@@ -13,7 +13,7 @@ export default function MainLayout({ children }) {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
     >
-      <Header />
+      {/* <Header /> */}
       <Navbar />
       {children}
       <Outlet />

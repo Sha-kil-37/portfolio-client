@@ -1,15 +1,13 @@
 // SoundIcon.js
-import { useSound } from '../utils/visitor/sound/SoundContext';
-
+import { Fragment } from "react";
+import { useSound } from "../utils/visitor/sound/SoundContext";
+import { Volume2, VolumeX } from "lucide-react";
+//
 
 const SoundIcon = () => {
   const { isMusicPlaying } = useSound();
-
-  return (
-    <div className={`sound-icon ${isMusicPlaying ? 'animate' : ''}`}>
-      🔊
-    </div>
-  );
+  // console.log(isMusicPlaying);
+  return <Fragment>{isMusicPlaying ? <Volume2 /> : <VolumeX />}</Fragment>;
 };
 
 export default SoundIcon;
