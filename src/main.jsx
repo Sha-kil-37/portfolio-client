@@ -6,16 +6,24 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./utils/visitor/theme/ThemeContext";
 import { SoundProvider } from "./utils/visitor/sound/SoundContext";
 import SoundListener from "./hooks/visitor/SoundListener";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./redux/store/configStore.js";
+
 //
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <SoundProvider>
-      <ThemeProvider>
-        <SoundListener />
-        <BrowserRouter>
-          <AppRouter />
-        </BrowserRouter>
-      </ThemeProvider>
-    </SoundProvider>
+    <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <SoundProvider>
+        <ThemeProvider>
+          <SoundListener />
+          <BrowserRouter>
+            <AppRouter />
+          </BrowserRouter>
+        </ThemeProvider>
+      </SoundProvider>
+      </PersistGate>
+    </Provider>
   </StrictMode>
 );
