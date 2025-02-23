@@ -18,7 +18,6 @@
 @import "./visitor/banner/banner.css";
 @import "./animation/visitor/soundBarAnimation.css";
 @import "./visitor/soundBar/soundBar.css";
-@import "./visitor/cardStacks/cardStacks.css";
 @import "./animation/visitor/gradientTextAnimation.css";
 @import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
 @import "./visitor/smoothScroll/smoothScroll.css";

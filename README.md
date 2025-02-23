@@ -20,6 +20,11 @@ https://codepen.io/blaketarter/pen/GRqxKv;
 <!-- https://tanstack.com/query/latest -->
 <!-- https://redux-toolkit.js.org/ -->//
 আমার react পোর্টফলিও ওয়েবসাইট তৈরি করার জন্য কিছু পোর্টফলিও ডাটা আমার mongodb ডাটাবেসে আছে যা আমি আমার portfolio website a  প্রদর্শন করতে চাই | আমি আমার রিয়েক্ট portfolio ওয়েবসাইটে আমার ডাটার স্টেট ম্যানেজমেন্ট এবং এ পি আই কলিংয়ে উন্নত টেকনোলজি ব্যবহার করতে চাই যা আমার রিএক্ট পোর্টফলিতে স্টেট ম্যানেজমেন্ট এবং এপিআই কলিং সহজ ও ডায়নামিক করবে কিভাবে এটি আমি করতে পারি তুমি আমাকে সাহায্য করো
-
 //
+
 redux thunk/redux Persistence
+//
+I have a user data API that returns a user data object | I want to set my redux store a using redux thunk for my API's user data | How can I manage my redux slice
+
+
+আমার একটি ডাটা আছে যা আমি ম্যাপ করে আমি আমার রিয়েক্ট অ্যাপ এ প্রদর্শন করেছি এখন আমি চাই আমার ম্যাপ করা প্রতিটি আইটেম ভিন্ন ভিন্ন ভ্যালু ব্যবহার করে রুটেট হয়ে প্রদর্শিত হবে এবং rotate ভ্যালু আমি আমার আইটেমের ইনডেক্স কি দিয়ে তৈরি করতে চাই কিভাবে এটা আমি করতে পারি

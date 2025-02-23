@@ -1,48 +1,40 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import {  createSlice } from "@reduxjs/toolkit";
+import { fetchAdminData } from "../api/visitor/fetchAdminData";
 
-// API Base URL
-const API_URL = "http://localhost:8000/portfolio/v1/visitor/get-admin";
 
-// Thunk: Fetch Data
-export const fetchAdminData = createAsyncThunk("fetchAdminData", async () => {
-  try {
-    const response = await axios.get(API_URL);
-    return response;
-  } catch (error) {
-    return error;
-  }
-});
-
+// Slice: Admin Data
+const initialState = {
+  data: null,
+  status: "idle", // loading || success || failure
+  error: null,
+};
 //
 const AdminDataSlice = createSlice({
   name: "adminDataSlice",
-  initialState: {
-    adminData: {},
-    status: "idle", // idle | loading | succeeded | failed
-    error: null,
-    reducers: {
-      // standard reducer logic, with auto-generated action types per reducer
-    },
-    extraReducers: (builder) => {
-      builder
-        // Handle Fetch Data
-        .addCase(fetchAdminData.pending, (state) => {
-          state.status = "loading";
-        })
-        .addCase(fetchAdminData.fulfilled, (state, action) => {
-          state.status = "succeeded";
-          state.items = action.payload;
-        })
-        .addCase(fetchAdminData.rejected, (state, action) => {
-          state.status = "failed";
-          state.error = action.error.message;
-        })
-        // Handle Add Data
-        .addCase(fetchAdminData.fulfilled, (state, action) => {
-          state.items.push(action.payload);
-        });
-    },
+  initialState,
+  reducers: {
+    // standard reducer logic, with auto-generated action types per reducer
+  },
+  extraReducers: (builder) => {
+    builder;
+    // Handle Fetch Data
+    builder.addCase(fetchAdminData.pending, (state, action) => {
+      state.status = "loading";
+      state.data = null;
+      state.error = null;
+      return;
+    });
+    builder.addCase(fetchAdminData.fulfilled, (state, action) => {
+      state.status = "success";
+      state.data = action.payload.data;
+      state.error = null;
+      return;
+    });
+    builder.addCase(fetchAdminData.rejected, (state, action) => {
+      state.status = "failure";  
+      state.data = null;
+      state.error = action.error.message;
+    });
   },
 });
 //

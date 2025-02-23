@@ -73,7 +73,7 @@ const Navbar = () => {
         </ul>
       </div>
       {/* Mobile navbar */}
-      {/* <div className="md:hidden flex justify-between items-center">
+      <div className="md:hidden flex justify-between items-center">
           <div className="text-xl font-bold">MyApp</div>
           <button
             onClick={toggleMenu}
@@ -90,7 +90,7 @@ const Navbar = () => {
             <li className="hover:underline">Contact</li>
             <ToggleTheme onClick={setDarkMode} theme={theme} />
           </ul>
-        )} */}
+        )} 
     </motion.nav>
   );
 };

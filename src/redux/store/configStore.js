@@ -4,16 +4,17 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import { combineReducers } from "redux";
 import adminDataSlice from "../slices/adminDataSlice";
 import { configureStore } from "@reduxjs/toolkit";
-// import { thunk } from 'redux-thunk';
+import testSlice from "../slices/testSlice";
 //
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [adminDataSlice], // Specify which slices should be persisted
+  whitelist: [testSlice, adminDataSlice], // Specify which slices should be persisted
 };
 
 const rootReducer = combineReducers({
   adminDataReducer: adminDataSlice, // Register the reducer
+  testReducer: testSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -21,7 +22,6 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Configure Store
 const store = configureStore({
   reducer: persistedReducer,
-
   // middleware: () => {
   //   return;
   // }, // Add thunk middleware
@@ -32,5 +32,5 @@ const store = configureStore({
 });
 
 const persistor = persistStore(store);
-
+//
 export { store, persistor };

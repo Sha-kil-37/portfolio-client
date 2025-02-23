@@ -9,7 +9,6 @@ import SoundListener from "./hooks/visitor/SoundListener";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store/configStore.js";
-
 //
 createRoot(document.getElementById("root")).render(
   <StrictMode>
