@@ -26,14 +26,14 @@ const AdminDataSlice = createSlice({
     });
     builder.addCase(fetchAdminData.fulfilled, (state, action) => {
       state.status = "success";
-      state.data = action.payload.data;
+      state.data = action.payload;
       state.error = null;
       return;
     });
     builder.addCase(fetchAdminData.rejected, (state, action) => {
       state.status = "failure";  
       state.data = null;
-      state.error = action.error.message;
+      state.error = action.payload;
     });
   },
 });
