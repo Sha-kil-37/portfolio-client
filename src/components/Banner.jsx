@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { fetchAdminData } from "../redux/api/visitor/fetchAdminData.js";
 import { useDispatch, useSelector } from "react-redux";
+import Loader from "./Loader.jsx";
 //
 const Banner = () => {
   const dispatch = useDispatch();
-  const { data, status, error } = useSelector(
+  const { data, loading, error } = useSelector(
     (state) => state.adminDataReducer
   );
 
@@ -16,7 +17,11 @@ const Banner = () => {
     dispatch(fetchAdminData());
   }, [dispatch]);
   //
-  console.log(data, status, error);
+  console.log(data, loading, error);
+  if (loading) {
+    return <Loader></Loader>;
+  }
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
   //
   return (
     <section className="flex justify-between items-center h-screen py-10 gap-10 container mx-auto">
