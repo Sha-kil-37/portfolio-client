@@ -2,8 +2,7 @@
 
 const AnimatedGradientText = ({ text, className = "" }) => {
   //
-
-  return <h2 className={`gradient-text ${className}`}>{text}</h2>;
+  return <span className={`gradient-text ${className}`}>{text}</span>;
 };
 
 export default AnimatedGradientText;

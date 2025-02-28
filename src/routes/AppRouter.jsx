@@ -20,6 +20,8 @@ export default function AppRouter() {
       {/* admin route */}
       
       {/* admin route */}
+      {/* not found route */}
+      <Route path="*" element={<div>Not found</div>} />
     </Routes>
   );
 }
