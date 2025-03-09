@@ -5,18 +5,20 @@ import { combineReducers } from "redux";
 import adminDataSlice from "../slices/adminDataSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import testSlice from "../slices/testSlice";
+import footerDataSlice from "../slices/footerDataSlice";
 //
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [testSlice, adminDataSlice], // Specify which slices should be persisted
+  whitelist: [testSlice, adminDataSlice, footerDataSlice], // Specify which slices should be persisted
 };
 
 const rootReducer = combineReducers({
   adminDataReducer: adminDataSlice, // Register the reducer
   testReducer: testSlice,
+  footerReducer: footerDataSlice,
 });
-
+//
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Configure Store

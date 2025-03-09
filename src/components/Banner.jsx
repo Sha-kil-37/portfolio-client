@@ -5,23 +5,22 @@ import { useEffect } from "react";
 import { fetchAdminData } from "../redux/api/visitor/fetchAdminData.js";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "./Loader.jsx";
+import GetMomentMsg from "./GetMomentMsg.jsx";
 //
 const Banner = () => {
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector(
+  const { admin, loading, error } = useSelector(
     (state) => state.adminDataReducer
   );
   // handle re data fetching
-  function handleRetry() {
+  function handleReFetch() {
     return dispatch(fetchAdminData());
   }
-
   // call admin API to get the banner data
   useEffect(() => {
     dispatch(fetchAdminData());
   }, [dispatch]);
   //
-  console.log(data);
   if (loading) {
     return <Loader></Loader>;
   }
@@ -32,7 +31,7 @@ const Banner = () => {
         <p>{error}</p>
         <button
           className="px-2 py-1 bg-blue-400 rounded-md text-white font-primary cursor-pointer mt-2"
-          onClick={handleRetry}
+          onClick={handleReFetch}
         >
           retry
         </button>
@@ -41,32 +40,58 @@ const Banner = () => {
   }
   //
   return (
-    <section className=" dark:bg-dark">
-      <div className="max-w-500 mx-auto flex justify-between h-screen items-center">
+    <section className="dark:bg-dark bg-primary py-20 block relative">
+      <div className="w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
           animate={{ opacity: 1, x: 0 }} // Animate to visible
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
         >
-          <h1 className="font-bold font-primary text-7xl text-black">
-            Hey i am
-          </h1>
+          <GetMomentMsg />
+          <span className="font-bold font-primary text-7xl">i am</span>
           <AnimatedGradientText
-            text={data?.name}
-            className="mt-2 inline-block font-bold text-7xl font-primary py-3"
+            text={admin?.name}
+            className="inline-block font-bold text-7xl font-primary py-3 w-full text-right"
           />
-          <p className="max-w-[800px] mt-2 text-2xl font-medium font-primary text-black">
-            {data?.about}
-          </p>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
           animate={{ opacity: 1, x: 0 }} // Animate to visible
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
-          className=""
+          className="flex justify-between mt-20"
         >
-          <CardStacks images={data?.images} />
+          <div>
+            <h3 className="mt-10 text-2xl font-medium font-primary max-w-180">
+              {admin?.subTitle}
+            </h3>
+          </div>
+          <CardStacks images={admin?.images} />
         </motion.div>
+        <h2>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
+          sequi nisi? Sed nesciunt facere animi non atque sapiente nemo ratione
+          enim et sunt alias, adipisci delectus consectetur explicabo voluptas
+          provident labore laboriosam cupiditate odio numquam! Amet, delectus
+          numquam? Voluptates modi illo inventore, veritatis veniam aperiam.
+          Doloremque repellendus exercitationem soluta pariatur suscipit ut
+          culpa incidunt excepturi quaerat doloribus odit est tempora eius
+          reprehenderit, facere reiciendis expedita ratione repudiandae? Debitis
+          quos ipsa placeat dolores soluta sed, minus amet dolore! Corporis
+          adipisci odio odit veniam dicta. Impedit delectus doloribus voluptate
+          ducimus. Voluptatem ipsa nam quidem molestias natus, autem harum fuga
+          aperiam eos veritatis corrupti adipisci ratione aliquid itaque porro
+          recusandae debitis cum veniam a neque, quod cupiditate vel? Dolor
+          reprehenderit deleniti debitis at facilis culpa incidunt cupiditate
+          rerum. Ea vitae natus autem reprehenderit maiores repellendus id,
+          aperiam accusantium itaque assumenda, ad ipsum enim debitis molestiae
+          asperiores ipsa inventore eveniet vero quibusdam incidunt ratione?
+          Adipisci cum vel nostrum praesentium, maxime nulla velit dolor ratione
+          quam quis ducimus itaque doloremque et fuga natus. Aperiam quam ea
+          nulla, placeat cum voluptas ab consectetur natus, aliquid ullam
+          repellat dolorum eveniet autem porro illum quas odit fugit illo nobis
+          architecto, dicta mollitia sed? Rerum modi culpa consectetur totam!
+        </h2>
       </div>
     </section>
   );

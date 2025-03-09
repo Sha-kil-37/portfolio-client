@@ -6,7 +6,6 @@ import Loader from "../../../components/Loader";
 const HomePage = lazy(() => import("../../../layout/visitor/MainLayout"));
 //
 export default function Home() {
-
   //
   return (
     <Suspense fallback={<Loader />}>

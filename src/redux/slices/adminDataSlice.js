@@ -1,10 +1,10 @@
 import { fetchAdminData } from "../api/visitor/fetchAdminData";
 import { createSlice } from "@reduxjs/toolkit";
 //
-const AdminDataSlice = createSlice({
+const adminDataSlice = createSlice({
   name: "adminData",
   initialState: {
-    data: null,
+    admin: null,
     loading: false,
     error: null,
   },
@@ -17,7 +17,7 @@ const AdminDataSlice = createSlice({
       })
       .addCase(fetchAdminData.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload;
+        state.admin = action.payload;
       })
       .addCase(fetchAdminData.rejected, (state, action) => {
         state.loading = false;
@@ -26,4 +26,4 @@ const AdminDataSlice = createSlice({
   },
 });
 
-export default AdminDataSlice.reducer;
+export default adminDataSlice.reducer;

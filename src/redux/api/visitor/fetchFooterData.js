@@ -1,15 +1,16 @@
 //
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
- // base url
- const API_URL = "http://localhost:8000/portfolio/api/v1/visitor/get-admin";
- // Thunk: Fetch Data
-export const fetchAdminData = createAsyncThunk(
-  "fetchAdminData",
+// base url
+const API_URL = "http://localhost:8000/portfolio/api/v1/visitor/get-footer";
+// Thunk: Fetch Data
+export const fetchFooterData = createAsyncThunk(
+  "fetchFooterData",
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(API_URL);
-      return response.data.data;
+      return response.data;
+      // console.log(response.data);
     } catch (error) {
       // Handle server downtime or other errors
       return rejectWithValue({

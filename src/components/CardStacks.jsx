@@ -6,16 +6,19 @@ const CardStack = ({ images }) => {
   useEffect(() => {
     setCards(images);
   }, [images]);
- 
+
   //
-  const handleClick = (index) => {
-    // console.log(index);
-    return setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);
+  const moveToFirst = (index) => {
+    // return setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);
+    const newCards = [...cards]; // Create a copy of the images array
+    const clickedCard = newCards.splice(index, 1)[0]; // Remove clicked image
+    newCards.unshift(clickedCard); // Place at the start
+    setCards(newCards); // Update state
   };
 
   //
   return (
-    <div className="relative w-60 h-60">
+    <div className="relative h-60 w-60">
       {cards?.map((card, index) => {
         return (
           <div
@@ -24,9 +27,9 @@ const CardStack = ({ images }) => {
             style={{
               backgroundImage: `url(${card?.url})`,
               zIndex: `${cards?.length - index}`,
-              rotate: `${(index % 2 === 0 ? 1 : -1) * (Math.random() * 10)}deg`,
+              rotate: `${(index % 2 === 0 ? 1 : -1) * (Math.random() * 15)}deg`,
             }}
-            onClick={() => handleClick(index)}
+            onClick={() => moveToFirst(index)}
           ></div>
         );
       })}
