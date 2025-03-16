@@ -5,11 +5,10 @@
   --color-black: #181823;
   --color-white: #fff;
   --color-dark: #264e70;
-  --color-primary: #FFFBF7;
+  --color-primary: #cdc6be;
   --color-secondary: #0284c7;
   /* font family */
-  --font-primary: "Playwrite IT Moderna", cursive;
-
+  --font-primary:  "Emblema One", system-ui;
 }
 
 @layer components {
@@ -18,5 +17,4 @@
     overflow-x: hidden;
     overflow-y: scroll;
   }
-  
 }

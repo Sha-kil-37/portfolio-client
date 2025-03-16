@@ -21,9 +21,9 @@ const Banner = () => {
     dispatch(fetchAdminData());
   }, [dispatch]);
   //
-  if (loading) {
-    return <Loader></Loader>;
-  }
+  // if (loading) {
+  //   return <Loader></Loader>;
+  // }
   if (error) {
     return (
       <div className="text-center">
@@ -92,6 +92,8 @@ const Banner = () => {
           repellat dolorum eveniet autem porro illum quas odit fugit illo nobis
           architecto, dicta mollitia sed? Rerum modi culpa consectetur totam!
         </h2>
+        <input onChange={e=>console.log(e)} className="border-2 border-dark" type="file" />
+        {/* <svg></svg> */}
       </div>
     </section>
   );
