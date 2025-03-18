@@ -2,13 +2,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../utils/visitor/theme/ThemeContext";
 import ToggleTheme from "./ToggleTheme";
+import { AudioLines } from "lucide-react";
 //
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setDarkMode } = ThemeContext();
   //
   return (
-    <nav className="relative bg-primary py-3 z-50">
+    <nav className="sticky top-0 left-0  py-3 z-50">
       <div className="w-300 mx-auto flex justify-between items-center">
         {/* Main Content */}
         <div className="main-content center text-2xl font-bold">
@@ -18,9 +19,13 @@ const NavBar = () => {
         </div>
         {/* Toggle Theme */}
         <ToggleTheme onClick={setDarkMode} theme={theme} />
+        <AudioLines />
         {/* Menu Icon */}
         <button
-        className={`${isOpen ? "text-white relative z-20" : "text-dark"} font-primary font-bold text-md cursor-pointer`}
+          
+          className={`${
+            isOpen ? "relative z-20" : "text-dark"
+          } font-primary font-bold text-md cursor-pointer hover:text-primary transition-colors duration-300 ease-in-out`}
           // className="{font-primary font-bold text-md cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -29,7 +34,7 @@ const NavBar = () => {
 
         {/* Slide Down Menu */}
         <motion.nav
-          className="bg-primary fixed inset-0 flex items-center justify-center"
+          className="fixed inset-0 flex items-center justify-center"
           initial={{ y: "-100%" }}
           animate={{ y: isOpen ? "0%" : "-100%" }}
           transition={{ type: "spring", stiffness: 40 }}

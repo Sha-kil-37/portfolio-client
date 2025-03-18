@@ -6,7 +6,13 @@ const CardStack = ({ images }) => {
   useEffect(() => {
     setCards(images);
   }, [images]);
-
+  // auto change image every 5 seconds
+useEffect(() => { 
+  const interval = setInterval(() => {
+  setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);
+  }, 8000);
+  return () => clearInterval(interval);
+}, [images]);
   //
   const moveToFirst = (index) => {
     // return setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);

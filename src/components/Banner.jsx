@@ -40,7 +40,7 @@ const Banner = () => {
   }
   //
   return (
-    <section className="dark:bg-dark bg-primary py-20 block relative">
+    <section className="dark:bg-dark py-20 block relative">
       <div className="w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
@@ -68,7 +68,7 @@ const Banner = () => {
           </div>
           <CardStacks images={admin?.images} />
         </motion.div>
-        <h2>
+        <h2 className="mt-20 font-primary">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
           sequi nisi? Sed nesciunt facere animi non atque sapiente nemo ratione
           enim et sunt alias, adipisci delectus consectetur explicabo voluptas
