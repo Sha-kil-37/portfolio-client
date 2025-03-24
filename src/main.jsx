@@ -4,8 +4,6 @@ import { createRoot } from "react-dom/client";
 import AppRouter from "./routes/AppRouter";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "./utils/visitor/theme/ThemeContext";
-import { SoundProvider } from "./utils/visitor/sound/SoundContext";
-import SoundListener from "./hooks/visitor/SoundListener";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store/configStore.js";
@@ -13,15 +11,12 @@ import { store, persistor } from "./redux/store/configStore.js";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <SoundProvider>
+      <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider>
-          <SoundListener />
           <BrowserRouter>
             <AppRouter />
           </BrowserRouter>
         </ThemeProvider>
-      </SoundProvider>
       </PersistGate>
     </Provider>
   </StrictMode>

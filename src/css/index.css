@@ -1,6 +1,6 @@
 /* font family */
 
-@import url('https://fonts.googleapis.com/css2?family=Emblema+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* font family */
 /* tailwind css */
@@ -21,5 +21,6 @@
 @import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
 @import "./visitor/smoothScroll/smoothScroll.css";
 @import "./visitor/header/header.css";
-@import "./visitor/droppingTexts/droppingTexts.css";
+@import "./visitor/footer/ScrollProgress.css";
+@import "./animation/visitor/scrollProgressAnimation.css";
 

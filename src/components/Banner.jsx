@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { fetchAdminData } from "../redux/api/visitor/fetchAdminData.js";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "./Loader.jsx";
 import GetMomentMsg from "./GetMomentMsg.jsx";
+import audio from "../assets/audio/mymusic2.mp3";
+import video from "../assets/video/myvideo.mp4";
+import Loader from "./Loader.jsx";
+import Test from "./Test.jsx";
 //
 const Banner = () => {
   const dispatch = useDispatch();
@@ -21,16 +24,16 @@ const Banner = () => {
     dispatch(fetchAdminData());
   }, [dispatch]);
   //
-  // if (loading) {
-  //   return <Loader></Loader>;
-  // }
+  if (loading) {
+    return <Loader></Loader>;
+  }
   if (error) {
     return (
       <div className="text-center">
-        <h1>Oh Uh</h1>
+        <h1 className="font-bold text-2xl font-primary text-primary">Oh Uh</h1>
         <p>{error}</p>
         <button
-          className="px-2 py-1 bg-blue-400 rounded-md text-white font-primary cursor-pointer mt-2"
+          className="px-2 py-1 bg-secondary rounded-md text-white font-primary cursor-pointer mt-2"
           onClick={handleReFetch}
         >
           retry
@@ -40,7 +43,7 @@ const Banner = () => {
   }
   //
   return (
-    <section className="dark:bg-dark py-20 block relative">
+    <section className=" dark:bg-dark py-20 block relative">
       <div className="w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
@@ -51,7 +54,7 @@ const Banner = () => {
           <span className="font-bold font-primary text-7xl">i am</span>
           <AnimatedGradientText
             text={admin?.name}
-            className="inline-block font-bold text-7xl font-primary py-3 w-full text-right"
+            className="inline-block font-bold text-7xl font-primary py-3 w-full text-right mt-10"
           />
         </motion.div>
 
@@ -68,31 +71,24 @@ const Banner = () => {
           </div>
           <CardStacks images={admin?.images} />
         </motion.div>
-        <h2 className="mt-20 font-primary">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
-          sequi nisi? Sed nesciunt facere animi non atque sapiente nemo ratione
-          enim et sunt alias, adipisci delectus consectetur explicabo voluptas
-          provident labore laboriosam cupiditate odio numquam! Amet, delectus
-          numquam? Voluptates modi illo inventore, veritatis veniam aperiam.
-          Doloremque repellendus exercitationem soluta pariatur suscipit ut
-          culpa incidunt excepturi quaerat doloribus odit est tempora eius
-          reprehenderit, facere reiciendis expedita ratione repudiandae? Debitis
-          quos ipsa placeat dolores soluta sed, minus amet dolore! Corporis
-          adipisci odio odit veniam dicta. Impedit delectus doloribus voluptate
-          ducimus. Voluptatem ipsa nam quidem molestias natus, autem harum fuga
-          aperiam eos veritatis corrupti adipisci ratione aliquid itaque porro
-          recusandae debitis cum veniam a neque, quod cupiditate vel? Dolor
-          reprehenderit deleniti debitis at facilis culpa incidunt cupiditate
-          rerum. Ea vitae natus autem reprehenderit maiores repellendus id,
-          aperiam accusantium itaque assumenda, ad ipsum enim debitis molestiae
-          asperiores ipsa inventore eveniet vero quibusdam incidunt ratione?
-          Adipisci cum vel nostrum praesentium, maxime nulla velit dolor ratione
-          quam quis ducimus itaque doloremque et fuga natus. Aperiam quam ea
-          nulla, placeat cum voluptas ab consectetur natus, aliquid ullam
-          repellat dolorum eveniet autem porro illum quas odit fugit illo nobis
-          architecto, dicta mollitia sed? Rerum modi culpa consectetur totam!
+        {/*  */}
+        <Test text="My React App" delay={100} />
+        {/*  */}
+        <audio controls>
+          <source src={audio} type="audio/mp3" />
+        </audio>
+        <video controls width="600" height="600" className="mx-auto">
+          <source src={video} type="video/mp4" />
+        </video>
+        {/*  */}
+        <h2 className="mt-20 font-primary text-2xl text-center text-[#E82561]">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nimus itaque
+          doloremque et fuga natus. Aperiam quam ea nulla, placeat cum voluptas
+          ab consectetur natus, aliquid ullam repellat dolorum eveniet autem
+          porro illum quas odit fugit illo nobis architecto, dicta mollitia sed?
+          Rerum modi culpa consectetur totam!
         </h2>
-        <input onChange={e=>console.log(e)} className="border-2 border-dark" type="file" />
+
         {/* <svg></svg> */}
       </div>
     </section>

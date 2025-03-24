@@ -1,14 +1,15 @@
 /* common css */
-
+/* rgba(0, 255, 135, 1) */
 @theme {
   /* color */
-  --color-black: #181823;
+  --color-black: #1A1A1A;
   --color-white: #fff;
-  --color-dark: #264e70;
-  --color-primary: #cdc6be;
+  --color-dark: #202020;
+  --color-primary: #00ff87;
   --color-secondary: #0284c7;
+  --color-test:rgba(255, 255, 255, 0.9);
   /* font family */
-  --font-primary:  "Emblema One", system-ui;
+  --font-primary:  "Press Start 2P", system-ui;
 }
 
 @layer components {

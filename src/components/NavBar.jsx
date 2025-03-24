@@ -2,31 +2,36 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../utils/visitor/theme/ThemeContext";
 import ToggleTheme from "./ToggleTheme";
-import { AudioLines } from "lucide-react";
+import SoundIcon from "./SoundIcon";
+import { useSelector } from "react-redux";
 //
 const NavBar = () => {
+  const { footer, error, loading } = useSelector(
+    (state) => state.footerReducer
+  );
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setDarkMode } = ThemeContext();
+  
   //
   return (
-    <nav className="sticky top-0 left-0  py-3 z-50">
+    <nav className="sticky top-0 left-0  py-3 z-100 bg-primary shadow-b-md ">
       <div className="w-300 mx-auto flex justify-between items-center">
         {/* Main Content */}
         <div className="main-content center text-2xl font-bold">
           <h1 className="font-primary font-semibold text-xl">
-            PORTFOLIO VERSION 1.0
+            PORTFOLIO {footer?.version}
           </h1>
         </div>
         {/* Toggle Theme */}
         <ToggleTheme onClick={setDarkMode} theme={theme} />
-        <AudioLines />
+        <SoundIcon />
         {/* Menu Icon */}
         <button
           
           className={`${
             isOpen ? "relative z-20" : "text-dark"
-          } font-primary font-bold text-md cursor-pointer hover:text-primary transition-colors duration-300 ease-in-out`}
-          // className="{font-primary font-bold text-md cursor-pointer"
+          } font-primary font-bold text-md cursor-pointer  transition-colors duration-300 ease-in-out`}
+         
           onClick={() => setIsOpen(!isOpen)}
         >
           MENU
@@ -34,7 +39,7 @@ const NavBar = () => {
 
         {/* Slide Down Menu */}
         <motion.nav
-          className="fixed inset-0 flex items-center justify-center"
+          className="bg-primary fixed inset-0 flex items-center justify-center"
           initial={{ y: "-100%" }}
           animate={{ y: isOpen ? "0%" : "-100%" }}
           transition={{ type: "spring", stiffness: 40 }}
