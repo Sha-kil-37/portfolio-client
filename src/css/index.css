@@ -1,6 +1,6 @@
 /* font family */
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
 
 /* font family */
 /* tailwind css */
@@ -11,8 +11,9 @@
 /* dark css */
 
 /* visitor css */
+@import "./visitor/logo/logo.css";
 @import "./visitor/common/common.css";
-@import "./visitor/navbar/navbar.css";
+/* @import "./visitor/navbar/navbar.css"; */
 @import "./visitor/home/home.css";
 @import "./visitor/banner/banner.css";
 @import "./animation/visitor/soundBarAnimation.css";

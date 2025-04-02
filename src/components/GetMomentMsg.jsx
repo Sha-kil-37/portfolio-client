@@ -36,5 +36,5 @@ export default function GetMomentMsg() {
 
   //
 
-  return <span className="font-primary font-bold text-7xl">{greeting}</span>;
+  return <span className="font-primary font-semibold text-6xl dark:text-white transition-colors duration-700 ease-in-out">{greeting}</span>;
 }

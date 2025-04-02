@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Moon, Sun,  } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useState, useRef } from "react";
 export default function ToggleTheme({ onClick, theme }) {
   //
@@ -19,7 +19,6 @@ export default function ToggleTheme({ onClick, theme }) {
     onClick();
     playAudio();
   }
-
   //
   return (
     <motion.div
@@ -30,18 +29,18 @@ export default function ToggleTheme({ onClick, theme }) {
       {theme === "dark" ? (
         <button
           onClick={handleClick}
-          className="focus:outline-none cursor-pointer"
-          title="Toggle light mode"
+          className="dark:text-test focus:outline-none cursor-pointer"
+          title="Toggle dark mode"
         >
-          <Moon />
+          <Sun />
         </button>
       ) : (
         <button
           onClick={handleClick}
-          className="focus:outline-none cursor-pointer"
-          title="Toggle dark mode"
+          className="dark:text-test focus:outline-none cursor-pointer"
+          title="Toggle light mode"
         >
-         <Sun />
+          <Moon />
         </button>
       )}
     </motion.div>

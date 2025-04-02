@@ -4,6 +4,8 @@ import { ThemeContext } from "../utils/visitor/theme/ThemeContext";
 import ToggleTheme from "./ToggleTheme";
 import SoundIcon from "./SoundIcon";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+// import Logo from "./Logo";
 //
 const NavBar = () => {
   const { footer, error, loading } = useSelector(
@@ -11,27 +13,24 @@ const NavBar = () => {
   );
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setDarkMode } = ThemeContext();
-  
+
   //
   return (
-    <nav className="sticky top-0 left-0  py-3 z-100 bg-primary shadow-b-md ">
+    <nav className="sticky top-0 left-0  py-3 z-100 shadow-lg">
       <div className="w-300 mx-auto flex justify-between items-center">
         {/* Main Content */}
-        <div className="main-content center text-2xl font-bold">
-          <h1 className="font-primary font-semibold text-xl">
-            PORTFOLIO {footer?.version}
-          </h1>
-        </div>
+        <Link to="/" className="font-bold text-2xl font-primary">
+          {footer?.logo}
+        </Link>
+        {/* <Logo/> */}
         {/* Toggle Theme */}
         <ToggleTheme onClick={setDarkMode} theme={theme} />
         <SoundIcon />
         {/* Menu Icon */}
         <button
-          
           className={`${
             isOpen ? "relative z-20" : "text-dark"
           } font-primary font-bold text-md cursor-pointer  transition-colors duration-300 ease-in-out`}
-         
           onClick={() => setIsOpen(!isOpen)}
         >
           MENU

@@ -1,15 +1,44 @@
 import { motion } from "framer-motion";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFooterData } from "../redux/api/visitor/fetchFooterData.js";
-import ScrollProgress from "./ScrollProgress.jsx";
+import { Link } from "react-router-dom";
+// import { useTranslation } from "react-i18next";
+// import { useLocation } from "react-router-dom";
 //
 export default function Footer() {
   //
+  const [progress, setProgress] = useState(0);
+  const footerRef = useRef(null);
   const dispatch = useDispatch();
   const { footer, error, loading } = useSelector(
     (state) => state.footerReducer
   );
+  //
+  //  observe the footer for show the progress bar
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setProgress(100); // Move progress bar to 100% when footer is in view
+        } else {
+          setProgress(0); // Reset when footer is not in view
+        }
+      },
+      { threshold: 0.5 } // Adjust this to trigger at different visibility levels
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, []);
+
   // call footer API to get the footer data
   useEffect(() => {
     dispatch(fetchFooterData());
@@ -37,10 +66,15 @@ export default function Footer() {
   }
 
   return (
-   
-      
-      <footer className="py-20 relative bg-secondary dark:bg-dark">
-        <ScrollProgress />
+    <Fragment>
+      {/* Progress Bar */}
+      <div className="relative bottom-0 left-0 w-full h-[5px]">
+        <div
+          className="h-full bg-primary dark:bg-test transition-all duration-1000 ease-in-out"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+      <footer ref={footerRef} className="py-20 relative">
         <div className="w-300 mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
@@ -48,7 +82,7 @@ export default function Footer() {
             transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
           >
             <div className="flex justify-between items-center">
-              <h2 className="text-center font-bold text-3xl font-primary text-white">
+              <h2 className="text-center font-bold text-3xl font-primary text-primary">
                 {footer?.copyrightText}
               </h2>
               <ul className="flex justify-center gap-x-10">
@@ -59,7 +93,7 @@ export default function Footer() {
                         // href={social.link}
                         // target="_blank"
                         // rel="noreferrer"
-                        className="text-white font-primary"
+                        className="text-primary font-primary"
                       >
                         {social?.platform}
                       </a>
@@ -71,17 +105,15 @@ export default function Footer() {
                 {footer?.releaseDate}
               </p>
             </div>
-            <div className="flex justify-center">
-              <button
-                className="cursor-pointer mt-5 py-2 px-2 bg-primary font-primary text-semibold inline-block"
-                type="button"
-              >
-                Contact Me
-              </button>
-            </div>
+            <Link viewTransition
+              to="/contact"
+              className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
+            >
+              Contact Me
+            </Link>
           </motion.div>
         </div>
-     </footer> 
-   
+      </footer>
+    </Fragment>
   );
 }

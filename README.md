@@ -39,3 +39,12 @@ I have a user data API that returns a user data object | I want to set my redux 
 আমার একটি ইমেজ array আছে যা আমি প্রতি ৫ সেকেন্ড পর পর array এলিমেন্ট ইনডেক্স পরিবর্তন করতে চাই কিভাবে আমি এটি রিয়াক্ট ব্যবহার করে করতে পারি তুমি আমাকে সাহায্য কর
 <!--  -->
 আমি আমার রিয়াক্ট পোর্টফলিও ওয়েবসাইটে আইকন যুক্ত করতে চাচ্ছি যার কাজ হবে যদি আমার ওয়েবসাইটে কোন অডিও ভিডিও প্লে হয় তাহলে আমার আইকনটি এনিমেশন করবে কিভাবে এটি আমি আমার react প্রজেক্টে করতে পারি তুমি আমাকে সাহায্য কর
+
+
+<!-- top of footer progressbar by scroll -->
+I want to display a dynamic progress bar above the footer in my react portfolio website, when I scroll to display my footer, my progress bar will move from left to right as the progress is complete, and if I scroll to the top, ignoring the footer, the progress bar will return to its original position. How can I do this in react a? Please help me.
+
+
+
+<!-- dark mode animation -->
+I want to add dark mode animation to my react portfolio website so that when I toggle dark mode on my website, the moon will rise from the bottom as an animation and the dark light will spread across the website and the moon will glow as an animation | How can I do this please help me

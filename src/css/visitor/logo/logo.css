@@ -1,0 +1,13 @@
+@layer components {
+  .signature path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: sign 4s ease-in-out forwards;
+  }
+
+  @keyframes sign {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
