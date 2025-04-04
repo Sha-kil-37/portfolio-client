@@ -5,12 +5,12 @@
   --color-black: #1A1A1D;
   --color-red: #ff0000;
   --color-white: #fff;
-  --color-dark: #333333;
+  --color-dark: #001C30;
   --color-primary: #00ff87;
   --color-secondary: #0284c7;
   --color-test:rgba(255, 255, 255, 0.9);
   /* font family */
-  --font-primary:   "Galindo", sans-serif;
+  --font-primary:   "Winky Sans", sans-serif;
 }
 
 @layer components {

@@ -16,29 +16,45 @@ const NavBar = () => {
 
   //
   return (
-    <nav className="sticky top-0 left-0  py-3 z-100 shadow-lg">
+    <nav className="sticky top-0 left-0 py-3 z-20 shadow">
       <div className="w-300 mx-auto flex justify-between items-center">
         {/* Main Content */}
-        <Link to="/" className="font-bold text-2xl font-primary">
-          {footer?.logo}
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: -10 }} // Start hidden, move from right
+          animate={{ opacity: 1, y: 0 }} // Animate to visible
+          transition={{ duration: 1, delay: 0.2 }} // Delay for
+        >
+          <Link
+            to="/"
+            className="font-bold text-2xl font-primary dark:text-test"
+          >
+            {footer?.logo}
+          </Link>
+        </motion.div>
+
         {/* <Logo/> */}
         {/* Toggle Theme */}
         <ToggleTheme onClick={setDarkMode} theme={theme} />
         <SoundIcon />
         {/* Menu Icon */}
-        <button
-          className={`${
-            isOpen ? "relative z-20" : "text-dark"
-          } font-primary font-bold text-md cursor-pointer  transition-colors duration-300 ease-in-out`}
-          onClick={() => setIsOpen(!isOpen)}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }} // Start hidden, move from right
+          animate={{ opacity: 1, y: 0 }} // Animate to visible
+          transition={{ duration: 1, delay: 0.2 }} // Delay for
         >
-          MENU
-        </button>
+          <button
+            className={`${
+              isOpen ? "relative z-20" : "text-dark"
+            } font-primary dark:text-test font-bold text-md cursor-pointer  transition-colors duration-300 ease-in-out`}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            MENU
+          </button>
+        </motion.div>
 
         {/* Slide Down Menu */}
         <motion.nav
-          className="bg-primary fixed inset-0 flex items-center justify-center"
+          className="bg-test fixed inset-0 flex items-center justify-center"
           initial={{ y: "-100%" }}
           animate={{ y: isOpen ? "0%" : "-100%" }}
           transition={{ type: "spring", stiffness: 40 }}

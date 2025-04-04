@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFooterData } from "../redux/api/visitor/fetchFooterData.js";
 import { Link } from "react-router-dom";
-// import { useTranslation } from "react-i18next";
-// import { useLocation } from "react-router-dom";
+
 //
 export default function Footer() {
   //
   const [progress, setProgress] = useState(0);
+ 
   const footerRef = useRef(null);
   const dispatch = useDispatch();
   const { footer, error, loading } = useSelector(
@@ -66,7 +66,12 @@ export default function Footer() {
   }
 
   return (
-    <Fragment>
+    <motion.div
+      initial={{ opacity: 0, y: 10 }} // Start hidden, move from right
+      animate={{ opacity: 1, y: 0 }} // Animate to visible
+      transition={{ duration: 1, delay: 0.2 }} // Delay for
+      
+    >
       {/* Progress Bar */}
       <div className="relative bottom-0 left-0 w-full h-[5px]">
         <div
@@ -74,7 +79,10 @@ export default function Footer() {
           style={{ width: `${progress}%` }}
         ></div>
       </div>
-      <footer ref={footerRef} className="py-20 relative">
+
+     
+      
+      <footer ref={footerRef} className="relative">
         <div className="w-300 mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
@@ -105,15 +113,19 @@ export default function Footer() {
                 {footer?.releaseDate}
               </p>
             </div>
-            <Link viewTransition
+            <Link
+              viewTransition
               to="/contact"
               className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
             >
               Contact Me
             </Link>
+            <strong className="block text-center font-medium font-primary text-secondary">develop by shakil from bangladesh</strong>
           </motion.div>
         </div>
       </footer>
-    </Fragment>
+
+      
+    </motion.div>
   );
 }

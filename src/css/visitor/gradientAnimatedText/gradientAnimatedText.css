@@ -1,7 +1,15 @@
 @layer components {
   .gradient-text {
     color: transparent;
-    background: linear-gradient(90deg, #347cdb, #da3394, #36b576);
+    background: linear-gradient(
+      90deg,
+      #00c2ff,
+      #33ff8c,
+      #ffc640,
+      #e54cff,
+      #ff4d4d,
+      #33ff8c
+    );
     animation: animate 10s linear infinite;
     background-size: 1000%;
     -webkit-background-clip: text;

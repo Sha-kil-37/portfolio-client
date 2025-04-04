@@ -7,12 +7,12 @@ const CardStack = ({ images }) => {
     setCards(images);
   }, [images]);
   // auto change image every 5 seconds
-useEffect(() => { 
-  const interval = setInterval(() => {
-  setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);
-  }, 8000);
-  return () => clearInterval(interval);
-}, [images]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [images]);
   //
   const moveToFirst = (index) => {
     // return setCards((prevCards) => [...prevCards.slice(1), prevCards[0]]);
@@ -24,22 +24,24 @@ useEffect(() => {
 
   //
   return (
-    <div className="relative h-60 w-60">
+    <figure className="relative h-60 w-60">
       {cards?.map((card, index) => {
         return (
           <div
             key={index}
-            className={`bg-cover bg-center h-full w-full absolute cursor-pointer rounded-xl overflow-hidden  drop-shadow-md`}
+            className={`absolute bg-cover bg-center h-full w-full cursor-pointer rounded-xl overflow-hidden`}
             style={{
               backgroundImage: `url(${card?.url})`,
               zIndex: `${cards?.length - index}`,
               rotate: `${(index % 2 === 0 ? 1 : -1) * (Math.random() * 15)}deg`,
             }}
             onClick={() => moveToFirst(index)}
-          ></div>
+          >
+           <div className="bg-dark/30 absolute top-0 left-0 h-full w-full hover:bg-transparent transition-colors duration-500 ease-in-out"></div>
+          </div>
         );
       })}
-    </div>
+    </figure>
   );
 };
 

@@ -22,8 +22,8 @@ export default function ToggleTheme({ onClick, theme }) {
   //
   return (
     <motion.div
-      initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
-      animate={{ opacity: 1, x: 0 }} // Animate to visible
+      initial={{ opacity: 0, y: -10 }} // Start hidden, move from right
+      animate={{ opacity: 1, y: 0 }} // Animate to visible
       transition={{ duration: 1, delay: 0.2 }} // Delay for
     >
       {theme === "dark" ? (

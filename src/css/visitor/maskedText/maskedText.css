@@ -1,0 +1,12 @@
+@layer components {
+  .masked-text {
+    color: transparent;
+    background-image:url('../../../assets/images/one.jpg');
+    background-size: 200%;
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 80s infinite alternate linear;
+  }
+}

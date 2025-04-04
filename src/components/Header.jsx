@@ -9,7 +9,7 @@ export default function Header() {
   // console.log(footer);
   // 
   return (
-    <header className="py-5 relative">
+    <header className="relative py-5">
       <h1 className="text-center block font-primary text-xl text-primary">PORTFOLIO {footer?.version}</h1>
     </header>
   );

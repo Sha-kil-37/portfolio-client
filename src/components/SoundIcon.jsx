@@ -7,9 +7,15 @@ const SoundIcon = () => {
   //
   return (
     <motion.div
-      animate={{ scale: isPlaying ? [1, 1.2, 1] : 1 }}
-      transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+      animate={{ scale: isPlaying ? [1, 1.2, 1] : 1, opacity: 1, y: 0 }}
+      transition={{
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+        delay: 0.2,
+      }}
       className=" text-white rounded-full shadow-lg"
+      initial={{ opacity: 0, y: -10 }} // Start hidden, move from right
     >
       <AudioLines
         className={`text-3xl ${isPlaying ? "text-green-500" : "text-gray-400"}`}

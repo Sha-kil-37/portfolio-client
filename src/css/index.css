@@ -1,6 +1,6 @@
 /* font family */
 
-@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* font family */
 /* tailwind css */
@@ -20,8 +20,9 @@
 @import "./visitor/soundBar/soundBar.css";
 @import "./animation/visitor/gradientTextAnimation.css";
 @import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
-@import "./visitor/smoothScroll/smoothScroll.css";
-@import "./visitor/header/header.css";
-@import "./visitor/footer/ScrollProgress.css";
+/* @import "./visitor/header/header.css"; */
 @import "./animation/visitor/scrollProgressAnimation.css";
+@import "./visitor/pageRouteTransition/pageRouteTransition.css";
+@import "./visitor/maskedText/maskedText.css";
+@import "./animation/visitor/maskedTextAnimation.css";
 

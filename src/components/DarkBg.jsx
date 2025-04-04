@@ -7,10 +7,10 @@ const DarkBg = ({ children }) => {
   //
 
   return (
-    <div className="relative w-full h-full transition-colors duration-700 ease-in-out dark:bg-black">
+    <div className="relative w-full h-full transition-colors duration-700 ease-in-out dark:bg-dark">
       {/* Dark Mode Background Overlay */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-black"
+        className="absolute top-0 left-0 w-full h-full bg-dark"
         initial={{ opacity: 0 }}
         animate={{ opacity: theme == "dark" ? 1 : 0 }}
         transition={{ duration: 1.2 }}
@@ -28,7 +28,7 @@ const DarkBg = ({ children }) => {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Moon
-          size={100}
+          size={70}
           className="text-test drop-shadow-[0_0_10px_rgba(255,255,100,0.8)]"
         />
       </motion.div>

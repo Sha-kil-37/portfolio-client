@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import GetMomentMsg from "./GetMomentMsg.jsx";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
+import MaskedText from "./MaskedText.jsx";
 
 //
 const Banner = () => {
@@ -43,7 +44,7 @@ const Banner = () => {
 
   //
   return (
-    <section className="py-50 block relative">
+    <section className="py-30 block relative">
       <div className="w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
@@ -64,24 +65,21 @@ const Banner = () => {
           initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
           animate={{ opacity: 1, x: 0 }} // Animate to visible
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
-          className="flex justify-between mt-20"
+          className="flex justify-between mt-15"
         >
-          <div>
-            <h3 className="dark:text-test mt-10 text-2xl font-medium font-primary max-w-180">
-              {admin?.subTitle}
-            </h3>
-          </div>
+          <MaskedText className="font-bold font-primary text-4xl w-[800px]" text={admin?.subTitle} />
           <CardStacks images={admin?.images} />
         </motion.div>
-        {/*  */}
 
-        {/*  */}
         <h2 className="mt-20 font-primary text-2xl text-center dark:text-test">
           {admin?.about}
         </h2>
 
         {/* <svg></svg> */}
-        <Link to="/about" className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center">
+        <Link
+          to="/about"
+          className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
+        >
           about me
         </Link>
       </div>
