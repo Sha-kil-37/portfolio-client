@@ -13,16 +13,15 @@
 /* visitor css */
 @import "./visitor/logo/logo.css";
 @import "./visitor/common/common.css";
-/* @import "./visitor/navbar/navbar.css"; */
 @import "./visitor/home/home.css";
 @import "./visitor/banner/banner.css";
 @import "./animation/visitor/soundBarAnimation.css";
 @import "./visitor/soundBar/soundBar.css";
 @import "./animation/visitor/gradientTextAnimation.css";
 @import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
-/* @import "./visitor/header/header.css"; */
 @import "./animation/visitor/scrollProgressAnimation.css";
 @import "./visitor/pageRouteTransition/pageRouteTransition.css";
 @import "./visitor/maskedText/maskedText.css";
 @import "./animation/visitor/maskedTextAnimation.css";
-
+@import "./animation/visitor/AnimationBottomToTopTextAnimation.css";
+@import "./visitor/AnimationBottomToTopText/animationBottomToTopText.css"

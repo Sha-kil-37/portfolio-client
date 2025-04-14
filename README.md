@@ -29,3 +29,15 @@ I want to display a dynamic progress bar above the footer in my react portfolio 
 I want to add dark mode animation to my react portfolio website so that when I toggle dark mode on my website, the moon will rise from the bottom as an animation and the dark light will spread across the website and the moon will glow as an animation | How can I do this please help me
 <!-- page routing transition -->
 I want to add routing transition while navigating pages in my react portfolio website so that I can do smooth page routing. How can I do it using react? Please help me.
+
+
+
+<!-- footer text -->
+© 2020-2025 bygreko সর্বস্বত্ব সংরক্ষিত Grekova O.S. (ইউএনপি কেএ৫৮৫৯৮০০)
+সাইটটি শুধুমাত্র বিজ্ঞাপন এবং তথ্যের উদ্দেশ্যে এবং এটি কোনও অনলাইন স্টোর নয়। উল্লেখিত দামগুলি কোনও পাবলিক অফার নয়।
+
+<!-- footer text animation -->
+I want to add some text to the footer of my react portfolio website which will animate from the bottom of my footer section to the top and it will stay running how can I do this using react can you help me
+<!--  -->
+আমি একটি সিএসএস গ্রিড লেআউট তৈরি করতে চাই যেখানে লে আউটের প্রথম বক্সটি হবে সকল বক্সের দ্বিগুণ 
+

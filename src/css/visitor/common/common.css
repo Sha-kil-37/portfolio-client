@@ -8,7 +8,7 @@
   --color-dark: #001C30;
   --color-primary: #00ff87;
   --color-secondary: #0284c7;
-  --color-test:rgba(255, 255, 255, 0.9);
+  --color-test:#5C7285;
   /* font family */
   --font-primary:   "Winky Sans", sans-serif;
 }
@@ -16,7 +16,7 @@
 @layer components {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     overflow-y: scroll;
   }
 }

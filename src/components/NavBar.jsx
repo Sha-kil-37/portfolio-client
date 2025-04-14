@@ -16,7 +16,7 @@ const NavBar = () => {
 
   //
   return (
-    <nav className="sticky top-0 left-0 py-3 z-20 shadow">
+    <nav className="sticky top-0 left-0 py-3 z-20 border-b-1 border-dark/20">
       <div className="w-300 mx-auto flex justify-between items-center">
         {/* Main Content */}
         <motion.div

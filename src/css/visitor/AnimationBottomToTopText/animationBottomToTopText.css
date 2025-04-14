@@ -1,0 +1,7 @@
+@layer components {
+  .animated-text {
+    position: relative;
+    bottom: -100%; /* Start below the footer */
+    animation: scrollUp 10s linear infinite; /* Adjust duration as needed */
+  }
+}
