@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-
-const useMediaStatus = () => {
+//
+const UseMediaStatus = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-
+  //
   useEffect(() => {
     const updateStatus = () => {
       const mediaElements = document.querySelectorAll("audio, video");
@@ -28,9 +28,8 @@ const useMediaStatus = () => {
       });
     };
   }, []);
-
+  //
   return isPlaying;
 };
 
-export default useMediaStatus;
-
+export default UseMediaStatus;

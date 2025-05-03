@@ -67,13 +67,10 @@ const Banner = () => {
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
           className="flex justify-between mt-15"
         >
-          <MaskedText className="font-bold font-primary text-4xl w-[800px]" text={admin?.subTitle} />
+          <p className="font-bold font-primary text-lg max-w-[500px]">{admin?.subTitle}</p>
           <CardStacks images={admin?.images} />
         </motion.div>
 
-        <h2 className="mt-20 font-primary text-2xl text-center dark:text-test">
-          {admin?.about}
-        </h2>
 
         {/* <svg></svg> */}
         <Link

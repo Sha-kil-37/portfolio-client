@@ -41,3 +41,7 @@ I want to add some text to the footer of my react portfolio website which will a
 <!--  -->
 আমি একটি সিএসএস গ্রিড লেআউট তৈরি করতে চাই যেখানে লে আউটের প্রথম বক্সটি হবে সকল বক্সের দ্বিগুণ 
 
+<!--website link for inspire to make my portfolio frontend design -->
+<!-- https://sentry.io/welcome/?utm_source=tanstack -->
+<!-- smooth scrolling code link from codepen -->
+<!-- https://codesandbox.io/p/sandbox/mhac-y7lkz?file=%2Fsrc%2FApp.js -->
