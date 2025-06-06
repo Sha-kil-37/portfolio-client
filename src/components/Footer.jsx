@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFooterData } from "../redux/api/visitor/fetchFooterData.js";
-import AnimationBottomToTopText from "./AnimationBottomToTopText.jsx";
+
 import Socials from "./Socials.jsx";
 import CopyRight from "./CopyRight.jsx";
+import AnimatedBottomToTopText from "./AnimatedBottomToTopText.jsx";
 //
 export default function Footer() {
   //
@@ -85,7 +86,7 @@ export default function Footer() {
       <footer ref={footerRef} className="relative overflow-hidden">
         <div className="w-300 mx-auto grid grid-cols-3">
           <div className="cols-span-2">
-            <AnimationBottomToTopText text="Designing with passion, developing with purpose. Let’s build something awesome together , Made with 💻, ☕, and a touch of magic. Always building. Always learning. Every line of code tells a story — what's yours?" />
+            <AnimatedBottomToTopText text="Designing with passion, developing with purpose. Let’s build something awesome together , Made with 💻, ☕, and a touch of magic. Always building. Always learning. Every line of code tells a story — what's yours?" />
           </div>
           <div>
             <h6 className="font-primary dark:text-test">Get in touch with me</h6>

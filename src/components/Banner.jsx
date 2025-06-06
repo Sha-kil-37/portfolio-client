@@ -1,4 +1,3 @@
-import CardStacks from "./CardStacks";
 import AnimatedGradientText from "./AnimatedGradientText";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
@@ -7,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import GetMomentMsg from "./GetMomentMsg.jsx";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
-import MaskedText from "./MaskedText.jsx";
+// import CardsStack from "./CardsStack.jsx";
 
 //
 const Banner = () => {
@@ -67,10 +66,22 @@ const Banner = () => {
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
           className="flex justify-between mt-15"
         >
-          <p className="font-bold font-primary text-lg max-w-[500px]">{admin?.subTitle}</p>
-          <CardStacks images={admin?.images} />
+          <p className="font-bold font-primary text-lg max-w-[500px]">
+            {admin?.subTitle}
+          </p>
+          {/* <CardsStack card={admin?.images} /> */}
         </motion.div>
-
+        <div className="bg-test w-200 h-50 mt-5 overflow-hidden mx-auto">
+          <p>
+            Lorem ipsum dolatae eveniet, ab deserunt nulla, facilis distinctio
+            expedita dam necessitatibus id cupiditate assumenda officiis itaque
+            possimus animi nemo, ex et cum adipisci nobis doloremque quis.
+            Itaque, quidem iusto repudiandae, vitae totam consequatur libero
+            illo rem inventore molestias at maiores voluptas ullam vel nobis
+            deleniti. Neque consequuntur debitis hic expedita! Quibusdam nihil
+            consequatur perferendis.
+          </p>
+        </div>
 
         {/* <svg></svg> */}
         <Link

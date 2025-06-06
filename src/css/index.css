@@ -1,6 +1,6 @@
 /* font family */
 
-@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap");
 
 /* font family */
 /* tailwind css */
@@ -11,17 +11,16 @@
 /* dark css */
 
 /* visitor css */
-@import "./visitor/logo/logo.css";
-@import "./visitor/common/common.css";
-@import "./visitor/home/home.css";
-@import "./visitor/banner/banner.css";
+@import "./visitor/cardsStack.css";
+@import "./visitor/logo.css";
+@import "./visitor/common.css";
 @import "./animation/visitor/soundBarAnimation.css";
-@import "./visitor/soundBar/soundBar.css";
-@import "./animation/visitor/gradientTextAnimation.css";
-@import "./visitor/gradientAnimatedText/gradientAnimatedText.css";
+@import "./visitor/soundBar.css";
+@import "./visitor/gradientAnimatedText.css";
+@import "./animation/visitor/gradientAnimatedTextAnimation.css";
 @import "./animation/visitor/scrollProgressAnimation.css";
-@import "./visitor/pageRouteTransition/pageRouteTransition.css";
-@import "./visitor/maskedText/maskedText.css";
+@import "./visitor/maskedText.css";
 @import "./animation/visitor/maskedTextAnimation.css";
-@import "./animation/visitor/AnimationBottomToTopTextAnimation.css";
-@import "./visitor/AnimationBottomToTopText/animationBottomToTopText.css"
+@import "./visitor/animatedBottomToTopText.css";
+@import "./animation/visitor/animatedBottomToTopTextAnimation.css";
+@import "./visitor/pageRouteTransition.css";
