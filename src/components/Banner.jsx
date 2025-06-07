@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import GetMomentMsg from "./GetMomentMsg.jsx";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
-// import CardsStack from "./CardsStack.jsx";
+import CardsStack from "./CardsStack.jsx";
 
 //
 const Banner = () => {
@@ -69,7 +69,7 @@ const Banner = () => {
           <p className="font-bold font-primary text-lg max-w-[500px]">
             {admin?.subTitle}
           </p>
-          {/* <CardsStack card={admin?.images} /> */}
+         <CardsStack />
         </motion.div>
         <div className="bg-test w-200 h-50 mt-5 overflow-hidden mx-auto">
           <p>
@@ -89,6 +89,12 @@ const Banner = () => {
           className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
         >
           about me
+        </Link>
+          <Link
+          to="/test"
+          className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
+        >
+          test
         </Link>
       </div>
     </section>
