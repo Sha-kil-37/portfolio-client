@@ -1,19 +1,32 @@
 import AnimatedGradientText from "./AnimatedGradientText";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchAdminData } from "../redux/api/visitor/fetchAdminData.js";
 import { useDispatch, useSelector } from "react-redux";
 import GetMomentMsg from "./GetMomentMsg.jsx";
 import Loader from "./Loader.jsx";
 import { Link } from "react-router-dom";
 import CardsStack from "./CardsStack.jsx";
-
+//
 //
 const Banner = () => {
   const dispatch = useDispatch();
+  const [adminImages, setAdminImages] = useState([]);
   const { admin, loading, error } = useSelector(
     (state) => state.adminDataReducer
   );
+  //
+  // set admin images to state
+  useEffect(() => {
+    setAdminImages((prev) => {
+      if (!admin?.images) return [];
+      // console.log(admin?.images);
+      return admin.images.map((image) => image.url);
+    });
+  }, [admin?.images]);
+
+
+
   // handle re data fetching
   function handleReFetch() {
     return dispatch(fetchAdminData());
@@ -69,9 +82,9 @@ const Banner = () => {
           <p className="font-bold font-primary text-lg max-w-[500px]">
             {admin?.subTitle}
           </p>
-         <CardsStack />
+          <CardsStack cards={adminImages}/>
         </motion.div>
-        <div className="bg-test w-200 h-50 mt-5 overflow-hidden mx-auto">
+        <div className="bg-primary w-200 h-50 mt-5 overflow-hidden mx-auto">
           <p>
             Lorem ipsum dolatae eveniet, ab deserunt nulla, facilis distinctio
             expedita dam necessitatibus id cupiditate assumenda officiis itaque
@@ -90,7 +103,7 @@ const Banner = () => {
         >
           about me
         </Link>
-          <Link
+        <Link
           to="/test"
           className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
         >
