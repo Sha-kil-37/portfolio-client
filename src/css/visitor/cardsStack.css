@@ -1,18 +1,19 @@
 @layer components {
   .card-stack-deck-root {
+    cursor: url("https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png")
+        39 39,
+      auto;
     position: relative;
-    width: 320px;
-    height: 480px;
-    margin: 0 auto;
+    margin: 100px auto;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
+  /*  */
   .card-stack-deck {
     position: absolute;
     width: 300px;
-    height: 440px;
+    height: 370px;
     will-change: transform;
     display: flex;
     align-items: center;
@@ -20,6 +21,7 @@
   }
 
   .card-stack-card {
+   
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -29,7 +31,7 @@
     cursor: grab;
     will-change: transform;
     user-select: none;
-    border: 2px solid #fff;
+    border: 2px solid #ffffff;
     transition: box-shadow 0.2s;
   }
 

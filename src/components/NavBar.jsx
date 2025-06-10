@@ -54,7 +54,7 @@ const NavBar = () => {
 
         {/* Slide Down Menu */}
         <motion.nav
-          className="bg-test fixed inset-0 flex items-center justify-center"
+          className="bg-primary fixed inset-0 flex items-center justify-center"
           initial={{ y: "-100%" }}
           animate={{ y: isOpen ? "0%" : "-100%" }}
           transition={{ type: "spring", stiffness: 40 }}

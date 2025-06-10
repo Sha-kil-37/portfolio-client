@@ -50,3 +50,6 @@ I want to add some text to the footer of my react portfolio website which will a
 <!-- https://codesandbox.io/p/sandbox/mhac-y7lkz?file=%2Fsrc%2FApp.js -->
 <!-- cart stack codepen plugin url link bellow -->
 <!-- https://codesandbox.io/p/sandbox/to6uf?file=%2Fsrc%2FApp.tsx -->
+
+<!-- My card stack company is changing the cards by swipe the middle cards in the stack. But I want the cards to start changing from the top of the card stack, which means the card with the highest z index will change first. How can I do this? -->
+

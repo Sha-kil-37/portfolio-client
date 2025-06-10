@@ -1,9 +1,9 @@
-import { useState } from "react";
+
+// 
+import { useState, useEffect, useRef } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
-//
 
-//
 const to = (i) => ({
   x: 0,
   y: i * -4,
@@ -17,15 +17,54 @@ const trans = (r, s) =>
     r / 10
   }deg) rotateZ(${r}deg) scale(${s})`;
 
-// Main component rendering the card stack
-export default function CardsStack({cards}) {
- 
-  
+export default function CardsStack({ cards }) {
   const [gone] = useState(() => new Set());
   const [props, api] = useSprings(cards.length, (i) => ({
     ...to(i),
     from: from(i),
   }));
+  const [current, setCurrent] = useState(cards.length - 1); // Start from the last card (top of stack)
+  const intervalRef = useRef();
+
+  // Auto-change card every 5 seconds
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => {
+        // If we've reached the first card, start again from the top
+        if (prev <= 0) return cards.length - 1;
+        return prev - 1; // Move to the previous card (higher in the stack)
+      });
+    }, 5000);
+    return () => clearInterval(intervalRef.current);
+  }, [cards.length]);
+
+  // Flick out the current card when current changes
+  useEffect(() => {
+    if (cards.length === 0) return;
+    gone.add(current);
+    api.start((i) => {
+      if (i !== current) return;
+      const dir = 1; // Always to the right for auto
+      const x = (200 + window.innerWidth) * dir;
+      const rot = dir * 10;
+      const scale = 1;
+      return {
+        x,
+        rot,
+        scale,
+        delay: undefined,
+        config: { friction: 150, tension: 150 },
+      };
+    });
+    if (gone.size === cards.length) {
+      setTimeout(() => {
+        gone.clear();
+        api.start((i) => to(i));
+        setCurrent(cards.length - 1); // Reset to top card
+      }, 600);
+    }
+  }, [current, api, cards.length, gone]);
+
   const bind = useDrag(
     ({ args: [index], down, movement: [mx], direction: [xDir], velocity }) => {
       const trigger = velocity > 0.2;
@@ -42,7 +81,10 @@ export default function CardsStack({cards}) {
           rot,
           scale,
           delay: undefined,
-          config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
+          config: {
+            friction: isGone ? 40 : down ? 800 : 500,
+            tension: isGone ? 300 : down ? 800 : 500,
+          },
         };
       });
       if (!down && gone.size === cards.length)
@@ -53,10 +95,9 @@ export default function CardsStack({cards}) {
     }
   );
 
-  //
   return (
-    <div className="card-stack-deck-root">
-      {props.map(({ x, y, rot, scale }, i) => (
+    <div className="relative h-full w-full flex items-center justify-center min-h-[400px]">
+      {props.map(({ x, y, rot, scale, opacity }, i) => (
         <animated.div className="card-stack-deck" key={i} style={{ x, y }}>
           <animated.div
             {...bind(i)}
@@ -64,6 +105,10 @@ export default function CardsStack({cards}) {
             style={{
               transform: interpolate([rot, scale], trans),
               backgroundImage: `url(${cards[i]})`,
+              opacity,
+              boxShadow: scale.to(
+                (s) => `0 20px 40px rgba(0,0,0,${(s - 1) * 0.3})`
+              ),
             }}
           />
         </animated.div>
@@ -71,3 +116,5 @@ export default function CardsStack({cards}) {
     </div>
   );
 }
+// 
+

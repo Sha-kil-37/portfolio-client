@@ -29,7 +29,7 @@ const DarkBg = ({ children }) => {
       >
         <Moon
           size={70}
-          className="text-test drop-shadow-[0_0_10px_rgba(255,255,100,0.8)]"
+          className="text-test fill-[#FDFBEE]"
         />
       </motion.div>
 
