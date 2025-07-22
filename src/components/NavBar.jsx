@@ -5,7 +5,6 @@ import ToggleTheme from "./ToggleTheme";
 import SoundIcon from "./SoundIcon";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// import Logo from "./Logo";
 //
 const NavBar = () => {
   const { footer, error, loading } = useSelector(
@@ -44,8 +43,8 @@ const NavBar = () => {
         >
           <button
             className={`${
-              isOpen ? "relative z-20" : "text-dark"
-            } font-primary dark:text-test font-bold text-md cursor-pointer  transition-colors duration-300 ease-in-out`}
+              isOpen ? "relative z-20 " : "text-dark"
+            } font-primary dark:text-test font-bold text-md cursor-pointer  transition-colors duration-300 ease-in-out dark:text-white`}
             onClick={() => setIsOpen(!isOpen)}
           >
             MENU

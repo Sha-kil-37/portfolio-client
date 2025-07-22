@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import UseMediaStatus from "../hooks/visitor/UseMediaStatus.jsx";// Custom hook to check if media is playing
 import { AudioLines } from "lucide-react";
+
 //
 const SoundIcon = () => {
   const isPlaying = UseMediaStatus();

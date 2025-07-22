@@ -1,40 +1,32 @@
-import { useEffect, useState } from "react";
-import * as Icons from "lucide-react";
-import { useSelector } from "react-redux";
-//
-export default function Socials() {
-  // early return korte hobe
-  const [socials, setSocials] = useState([]);
-  const { footer, error, loading } = useSelector(
-    (state) => state.footerReducer
-  );
-
-  // set socials into state variable
-  useEffect(() => {
-    if (footer?.socialLinks) {
-      setSocials(footer?.socialLinks);
-    }
-  }, [footer?.socialLinks]);
-
-  //
+import * as Icon from "lucide-react";
+// 
+function Socials({ socialLinks }) {
+  // This component renders a list of social media icons based on the provided socialLinks prop.
+  // Each icon is rendered using the Lucide icon library, and the size of each icon
+// console.log(socialLinks);
   return (
-    <ul className="flex gap-3">
-      {socials.map((social) => {
-        const IconComponent = Icons[social.icon];
-        return (
-          <li key={social.platform}>
-            <a
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl dark:text-test hover:text-blue-400 transition-all"
-            >
-              {IconComponent && <IconComponent />}
-            </a>
-            <i className="font-primary dark:text-test">{social.platform}</i>
-          </li>
-        );
-      })}
+    <ul style={{ display: "flex", gap: "1rem", listStyle: "none", padding: 0 }}>
+      {socialLinks &&
+        socialLinks.map((socialLink, index) => {
+          console.log(socialLink?.icon);
+          const SocialIcon = Icon[socialLink?.icon];
+         
+          return (
+            <li key={index} title={socialLink?.platform} className="cursor-pointer">
+              <a
+                href={socialLink?.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {SocialIcon && (
+                  <SocialIcon title={socialLink?.platform} color={socialLink.color} size={30} />
+                )}
+                <span>{socialLink?.platform}</span>
+              </a>
+            </li>
+          );
+        })}
     </ul>
   );
 }
+export default Socials;

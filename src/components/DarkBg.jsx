@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { Moon } from "lucide-react";
 import { ThemeContext } from "../utils/visitor/theme/ThemeContext";
-
+// 
 const DarkBg = ({ children }) => {
   const { theme, setDarkMode } = ThemeContext();
   //
-
   return (
     <div className="relative w-full h-full transition-colors duration-700 ease-in-out dark:bg-dark">
       {/* Dark Mode Background Overlay */}
@@ -29,10 +28,9 @@ const DarkBg = ({ children }) => {
       >
         <Moon
           size={70}
-          className="text-test fill-[#FDFBEE]"
+          className="text-test fill-[#FFE8CD]"
         />
       </motion.div>
-
       {/* Website Content */}
       <div className="relative z-10">{children}</div>
     </div>

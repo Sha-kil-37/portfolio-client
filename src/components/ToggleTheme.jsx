@@ -29,7 +29,7 @@ export default function ToggleTheme({ onClick, theme }) {
       {theme === "dark" ? (
         <button
           onClick={handleClick}
-          className="dark:text-test focus:outline-none cursor-pointer"
+          className="dark:text-white focus:outline-none cursor-pointer"
           title="Toggle dark mode"
         >
           <Sun />
@@ -37,7 +37,7 @@ export default function ToggleTheme({ onClick, theme }) {
       ) : (
         <button
           onClick={handleClick}
-          className="dark:text-test focus:outline-none cursor-pointer"
+          className="dark:text-white focus:outline-none cursor-pointer"
           title="Toggle light mode"
         >
           <Moon />

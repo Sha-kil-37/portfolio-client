@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFooterData } from "../redux/api/visitor/fetchFooterData.js";
-
 import Socials from "./Socials.jsx";
 import CopyRight from "./CopyRight.jsx";
 import AnimatedBottomToTopText from "./AnimatedBottomToTopText.jsx";
@@ -19,7 +18,6 @@ export default function Footer() {
   const { footer, error, loading } = useSelector(
     (state) => state.footerReducer
   );
-  //
   //  observe the footer for show the progress bar
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -79,8 +77,8 @@ export default function Footer() {
       {/* Progress Bar */}
       <div className="relative bottom-0 left-0 w-full h-[3px]">
         <div
-          className="h-full bg-test dark:bg-test transition-all duration-1000 ease-in-out"
-          style={{ width: `${progress}%`}}
+          className="h-full bg-red dark:bg-primary transition-all duration-1000 ease-in-out"
+          style={{ width: `${progress}%` }}
         ></div>
       </div>
       <footer ref={footerRef} className="relative overflow-hidden">
@@ -89,10 +87,10 @@ export default function Footer() {
             <AnimatedBottomToTopText text="Designing with passion, developing with purpose. Let’s build something awesome together , Made with 💻, ☕, and a touch of magic. Always building. Always learning. Every line of code tells a story — what's yours?" />
           </div>
           <div>
-            <h6 className="font-primary dark:text-test">Get in touch with me</h6>
-            <Socials />
-
-            
+            <h6 className="font-primary dark:text-test mb-3">
+              Get in touch with me
+            </h6>
+            <Socials socialLinks={footer?.socialLinks} />
           </div>
           <div>
             <h6 className="font-primary dark:text-test">Get me on</h6>

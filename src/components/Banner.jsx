@@ -5,7 +5,6 @@ import { fetchAdminData } from "../redux/api/visitor/fetchAdminData.js";
 import { useDispatch, useSelector } from "react-redux";
 import GetMomentMsg from "./GetMomentMsg.jsx";
 import Loader from "./Loader.jsx";
-import { Link } from "react-router-dom";
 import CardsStack from "./CardsStack.jsx";
 //
 //
@@ -24,8 +23,6 @@ const Banner = () => {
       return admin.images.map((image) => image.url);
     });
   }, [admin?.images]);
-
-
 
   // handle re data fetching
   function handleReFetch() {
@@ -53,7 +50,6 @@ const Banner = () => {
       </div>
     );
   }
-
   //
   return (
     <section className="py-30 block relative">
@@ -67,6 +63,13 @@ const Banner = () => {
           <span className="font-primary font-semibold text-6xl dark:text-white transition-colors duration-700 ease-in-out">
             i am
           </span>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
+          animate={{ opacity: 1, x: 0 }} // Animate to visible
+          transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
+         
+        >
           <AnimatedGradientText
             text={admin?.name}
             className="inline-block font-bold text-7xl font-primary py-3 w-full text-right mt-10"
@@ -77,38 +80,23 @@ const Banner = () => {
           initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
           animate={{ opacity: 1, x: 0 }} // Animate to visible
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
-          className="flex justify-between mt-15"
+         
         >
           <p className="font-bold font-primary text-lg max-w-[500px]">
             {admin?.subTitle}
           </p>
-          <CardsStack cards={adminImages}/>
         </motion.div>
-        <div className="bg-primary w-200 h-50 mt-5 overflow-hidden mx-auto">
-          <p>
-            Lorem ipsum dolatae eveniet, ab deserunt nulla, facilis distinctio
-            expedita dam necessitatibus id cupiditate assumenda officiis itaque
-            possimus animi nemo, ex et cum adipisci nobis doloremque quis.
-            Itaque, quidem iusto repudiandae, vitae totam consequatur libero
-            illo rem inventore molestias at maiores voluptas ullam vel nobis
-            deleniti. Neque consequuntur debitis hic expedita! Quibusdam nihil
-            consequatur perferendis.
-          </p>
-        </div>
 
-        {/* <svg></svg> */}
-        <Link
-          to="/about"
-          className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
+        <motion.div
+          initial={{ opacity: 0, x: 20 }} // Start hidden, move from right
+          animate={{ opacity: 1, x: 0 }} // Animate to visible
+          transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
         >
-          about me
-        </Link>
-        <Link
-          to="/test"
-          className="font-bold cursor-pointer text-secondary hover:underline my-10 block text-center"
-        >
-          test
-        </Link>
+          <CardsStack cards={adminImages} />
+        </motion.div>
+
+
+      <p className="font-bold font-primary text-xl text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente odit dolore praesentium omnis molestiae, ex aspernatur quaerat eum, nemo hic tempore error suscipit, modi veniam placeat ipsa animi totam unde nihil sequi dignissimos deserunt officia! Quis earum enim maiores quibusdam asperiores nam doloribus, consequuntur numquam itaque perspiciatis blanditiis quam rerum ducimus reiciendis quasi velit id possimus distinctio similique, aut maxime perferendis? Corporis modi architecto fuga optio porro. Voluptatum quod repudiandae, expedita distinctio molestiae itaque sunt eos deleniti! Cumiatur quisquam ipsam quos voluptas? Consequatur magnam voluptate optio ipsa earum voluptatum sapiente iusto aut sed? Adipisci reiciendis perferendis labore repudiandae! Earum, te!</p>
       </div>
     </section>
   );

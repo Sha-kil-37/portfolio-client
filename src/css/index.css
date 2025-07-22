@@ -11,10 +11,15 @@
 /* dark css */
 
 /* visitor css */
-@import "./visitor/cardsStack.css";
+/* admin social icon css bellow */
+@import "./visitor/socialIcon.css"; 
+/* logo css bellow */
 @import "./visitor/logo.css";
+/* app common css bellow */
 @import "./visitor/common.css";
+/* soundbar icon animation css bellow */
 @import "./animation/visitor/soundBarAnimation.css";
+
 @import "./visitor/soundBar.css";
 @import "./visitor/gradientAnimatedText.css";
 @import "./animation/visitor/gradientAnimatedTextAnimation.css";
@@ -24,3 +29,4 @@
 @import "./visitor/animatedBottomToTopText.css";
 @import "./animation/visitor/animatedBottomToTopTextAnimation.css";
 @import "./visitor/pageRouteTransition.css";
+/* animation css gula alada ak jagay rakha lagbo */

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // custom hook to use the theme context
-const UseTheme = () => {
+const useTheme = () => {
   const [theme, setTheme] = useState(() => {
     // Determine the initial theme on page load
     return (
@@ -25,4 +25,4 @@ const UseTheme = () => {
   };
   return { theme, setDarkMode };
 };
-export default UseTheme;
+export default useTheme;

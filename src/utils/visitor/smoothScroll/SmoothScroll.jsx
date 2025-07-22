@@ -1,11 +1,11 @@
 import { ReactLenis, useLenis } from "lenis/react";
 import { useRef } from "react";
 //
-function SmoothScroll({ children }) {
+const SmoothScroll = ({ children }) => {
   //
   const lenisRef = useRef();
   const lenis = useLenis((lenis) => {
-   /* console.log("lenis in callback", lenis); */
+    /* console.log("lenis in callback", lenis); */
     // console.log("lenis in callback", lenis.scroll.instance.scroll.y);
     // console.log("lenis in callback", lenis.scroll.instance.limit);
     // console.log("lenis in callback", lenis.scroll.instance.delta.y);
@@ -26,6 +26,6 @@ function SmoothScroll({ children }) {
       </ReactLenis>
     </>
   );
-}
+};
 
 export default SmoothScroll;

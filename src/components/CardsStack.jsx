@@ -1,5 +1,5 @@
+//
 
-// 
 import { useState, useEffect, useRef } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
 import { useDrag } from "@use-gesture/react";
@@ -16,7 +16,7 @@ const trans = (r, s) =>
   `perspective(1500px) rotateX(30deg) rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s})`;
-
+//
 export default function CardsStack({ cards }) {
   const [gone] = useState(() => new Set());
   const [props, api] = useSprings(cards.length, (i) => ({
@@ -94,14 +94,18 @@ export default function CardsStack({ cards }) {
         }, 600);
     }
   );
-
+  //
   return (
-    <div className="relative h-full w-full flex items-center justify-center min-h-[400px]">
+    <div className="relative min-h-80 min-w-50 max-h-100 max-w-70 ml-auto">
       {props.map(({ x, y, rot, scale, opacity }, i) => (
-        <animated.div className="card-stack-deck" key={i} style={{ x, y }}>
+        <animated.div
+          className="absolute right-0 h-full w-full will-change-transform"
+          key={i}
+          style={{ x, y }}
+        >
           <animated.div
             {...bind(i)}
-            className="card-stack-card"
+            className="bg-cover bg-center h-full w-full rounded-lg shadow-lg cursor-grab will-change-transform user-select-none transition-shadow duration-300 ease-in-out"
             style={{
               transform: interpolate([rot, scale], trans),
               backgroundImage: `url(${cards[i]})`,
@@ -116,5 +120,4 @@ export default function CardsStack({ cards }) {
     </div>
   );
 }
-// 
-
+//
