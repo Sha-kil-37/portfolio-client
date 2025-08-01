@@ -1,4 +1,4 @@
-import { fetchAdminData } from "../api/visitor/fetchAdminData";
+import { fetchAdminData } from "../../api/visitor/fetchAdminData";
 import { createSlice } from "@reduxjs/toolkit";
 //
 const adminDataSlice = createSlice({

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchFooterData } from "../api/visitor/fetchFooterData.js";
+import { fetchFooterData } from "../../api/visitor/fetchFooterData.js";
 //
 const footerDataSlice = createSlice({
   name: "footerData",

@@ -60,7 +60,7 @@ const Banner = () => {
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
         >
           <GetMomentMsg />
-          <span className="font-primary font-semibold text-6xl dark:text-white transition-colors duration-700 ease-in-out">
+          <span className="font-primary font-semibold text-8xl dark:text-white transition-colors duration-700 ease-in-out">
             i am
           </span>
         </motion.div>
@@ -82,7 +82,7 @@ const Banner = () => {
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
          
         >
-          <p className="font-bold font-primary text-lg max-w-[500px]">
+          <p className="font-bold font-primary text-2xl max-w-[500px]">
             {admin?.subTitle}
           </p>
         </motion.div>
