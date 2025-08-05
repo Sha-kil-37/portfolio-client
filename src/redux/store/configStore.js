@@ -4,21 +4,19 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 import { combineReducers } from "redux";
 import adminDataSlice from "../slices/visitor/adminDataSlice";
 import { configureStore } from "@reduxjs/toolkit";
-import testSlice from "../slices/visitor/testSlice";
 import footerDataSlice from "../slices/visitor/footerDataSlice";
 import adminGithubDataSlice from "../slices/visitor/adminGithubDataSlice";
 //
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [testSlice, adminDataSlice, footerDataSlice,adminGithubDataSlice], // Specify which slices should be persisted
+  whitelist: [adminDataSlice, footerDataSlice, adminGithubDataSlice], // Specify which slices should be persisted
 };
 
 const rootReducer = combineReducers({
   adminDataReducer: adminDataSlice, // Register the reducer
-  testReducer: testSlice,
+  adminGithubDataReducer: adminGithubDataSlice,
   footerReducer: footerDataSlice,
-  adminGithubReducer: adminGithubDataSlice,
 });
 //
 const persistedReducer = persistReducer(persistConfig, rootReducer);

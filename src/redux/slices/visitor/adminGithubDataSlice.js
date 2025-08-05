@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchAdminGithubData } from "../../api/visitor/fetchAdminGithubData.js";
-
+import { fetchAdminGithubData } from "../../api/visitor/fetchAdminGithubData";
 //
 const adminGithubDataSlice = createSlice({
   name: "adminGithubData",
