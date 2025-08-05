@@ -2,7 +2,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 // base url
-const API_URL = "http://localhost:8000/portfolio/api/v1/visitor/get-footer";
+const API_URL = "https://portfolio-server-t7c3.onrender.com/portfolio/api/v1/visitor/get-footer";
 // Thunk: Fetch Data
 export const fetchFooterData = createAsyncThunk(
   "fetchFooterData",
