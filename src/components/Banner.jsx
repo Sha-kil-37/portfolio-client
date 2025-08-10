@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import GetMomentMsg from "./GetMomentMsg.jsx";
 import Loader from "./Loader.jsx";
 import CardsStack from "./CardsStack.jsx";
+import Button from "./Button.jsx";
 //
 //
 const Banner = () => {
@@ -52,7 +53,7 @@ const Banner = () => {
   }
   //
   return (
-    <section className="py-30 block relative">
+    <section className="block relative">
       <div className="w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -10 }} // Start hidden, move from right
@@ -68,7 +69,6 @@ const Banner = () => {
           initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
           animate={{ opacity: 1, x: 0 }} // Animate to visible
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
-         
         >
           <AnimatedGradientText
             text={admin?.name}
@@ -80,11 +80,17 @@ const Banner = () => {
           initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
           animate={{ opacity: 1, x: 0 }} // Animate to visible
           transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
-         
         >
           <p className="font-bold font-primary text-2xl max-w-[500px]">
             {admin?.subTitle}
           </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 10 }} // Start hidden, move from right
+          animate={{ opacity: 1, x: 0 }} // Animate to visible
+          transition={{ duration: 1, delay: 0.2 }} // Delay for smooth effect
+        >
+          <Button>Download Cv</Button>
         </motion.div>
 
         <motion.div
@@ -94,9 +100,6 @@ const Banner = () => {
         >
           <CardsStack cards={adminImages} />
         </motion.div>
-
-
-      <p className="font-bold font-primary text-xl text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente odit dolore praesentium omnis molestiae, ex aspernatur quaerat eum, nemo hic tempore error suscipit, modi veniam placeat ipsa animi totam unde nihil sequi dignissimos deserunt officia! Quis earum enim maiores quibusdam asperiores nam doloribus, consequuntur numquam itaque perspiciatis blanditiis quam rerum ducimus reiciendis quasi velit id possimus distinctio similique, aut maxime perferendis? Corporis modi architecto fuga optio porro. Voluptatum quod repudiandae, expedita distinctio molestiae itaque sunt eos deleniti! Cumiatur quisquam ipsam quos voluptas? Consequatur magnam voluptate optio ipsa earum voluptatum sapiente iusto aut sed? Adipisci reiciendis perferendis labore repudiandae! Earum, te!</p>
       </div>
     </section>
   );

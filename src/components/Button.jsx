@@ -1,11 +1,8 @@
 // import "./Button.css"; // Ensure to create and import the CSS file
 
-const Button = () => {
+const Button = (props) => {
   return (
-    <button className="button" data-text="Awesome">
-      <span className="actual-text">&nbsp;uiverse&nbsp;</span>
-      <span aria-hidden="true" className="hover-text">&nbsp;uiverse&nbsp;</span>
-    </button>
+   <button className="py-2 px-2 bg-primary font-bold font-primary text-xl mt-10">{props.children}</button>
   );
 };
 

@@ -59,3 +59,15 @@ I want to add some text to the footer of my react portfolio website which will a
 
 <!-- manage socials link css color bellow -->
 <!-- How can I display my social links and icons in my component using the props data of my Socials component and I want to use the react lucid library for the icons? -->
+
+
+
+
+
+
+
+251421
+
+
+
+

@@ -13,18 +13,16 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchAdminGithubData());
   }, [dispatch]);
-  const { github, loading, error } = useSelector((state) => state.adminGithubDataReducer);
+  const { github, loading, error } = useSelector(
+    (state) => state.adminGithubDataReducer
+  );
 
-  console.log("Github Data:", github);
+ 
   return (
     <Suspense fallback={<Loader />}>
       <SmoothScroll>
         <HomePage>
           <Banner />
-          <img
-            src="https://github-readme-stats.vercel.app/api?username=Sha-kil-37&theme=react&show_icons=true&hide_border=true&count_private=true"
-            alt=""
-          />
         </HomePage>
       </SmoothScroll>
     </Suspense>

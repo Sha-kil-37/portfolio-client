@@ -8,7 +8,7 @@ export default function Header() {
   // console.log(footer);
   // 
   return (
-    <header className="relative py-5">
+    <header className="relative py-3">
       <h1 className="text-center block font-primary text-xl dark:text-primary font-bold text-black transition duration-200">PORTFOLIO <span className="text-red font-bold duration-200 font-primary text-xl">{footer?.version}</span></h1>
     </header>
   );
