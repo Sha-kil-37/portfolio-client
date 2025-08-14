@@ -5,6 +5,9 @@ import SmoothScroll from "../../../utils/visitor/smoothScroll/SmoothScroll";
 const HomePage = lazy(() => import("../../../layout/visitor/MainLayout"));
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAdminGithubData } from "../../../redux/api/visitor/fetchAdminGithubData";
+import Projects from "../../../components/Projects";
+import Services from "../../../components/Services";
+
 //
 export default function Home() {
   //
@@ -13,16 +16,19 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchAdminGithubData());
   }, [dispatch]);
+  //
   const { github, loading, error } = useSelector(
     (state) => state.adminGithubDataReducer
   );
 
- 
+  //
   return (
     <Suspense fallback={<Loader />}>
       <SmoothScroll>
         <HomePage>
           <Banner />
+          <Services />
+          <Projects />
         </HomePage>
       </SmoothScroll>
     </Suspense>

@@ -10,7 +10,7 @@ export default function CopyRight() {
   //
   return (
     <div className="py-3 relative z-20">
-      <div className="w-300 mx-auto flex justify-between border-t-[1px] border-test">
+      <div className="mx-auto flex justify-between border-t-[1px] border-test">
         <span className="mr-3 font-primary">ReleaseDate</span>
         <strong className="font-primary">{footer?.releaseDate}</strong>
         <p className="font-primary">&copy;{footer?.copyrightText}</p>

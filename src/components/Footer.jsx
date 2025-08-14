@@ -82,12 +82,12 @@ export default function Footer() {
         ></div>
       </div>
       <footer ref={footerRef} className="relative overflow-hidden">
-        <div className="w-300 mx-auto grid grid-cols-3">
+        <div className="grid grid-cols-3">
           <div className="cols-span-2">
             <AnimatedBottomToTopText text="Designing with passion, developing with purpose. Let’s build something awesome together , Made with 💻, ☕, and a touch of magic. Always building. Always learning. Every line of code tells a story — what's yours?" />
           </div>
           <div>
-            <h6 className="font-primary dark:text-test mb-3">
+            <h6 className="font-primary font-bold text-2xl dark:text-test mb-3">
               Get in touch with me
             </h6>
             <Socials socialLinks={footer?.socialLinks} />
@@ -97,6 +97,11 @@ export default function Footer() {
             <a href={mailtoLink} className="font-primary dark:text-test">
               {admin?.email}
             </a>
+            <form type="submit">
+              <label htmlFor="message" className="font-bold font-primary">Message Me</label>
+              <textarea id="message" rows="4" className="w-full p-2 border border-gray-300 rounded-md"></textarea>
+              <button type="submit" className="mt-2 px-4 py-2 bg-primary text-white rounded-md">Send</button>
+            </form>
           </div>
         </div>
         <CopyRight />

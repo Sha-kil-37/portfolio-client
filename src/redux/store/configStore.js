@@ -6,17 +6,24 @@ import adminDataSlice from "../slices/visitor/adminDataSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import footerDataSlice from "../slices/visitor/footerDataSlice";
 import adminGithubDataSlice from "../slices/visitor/adminGithubDataSlice";
+import adminProjectsDataSlice from "../slices/visitor/adminProjectsDataSlice"; // Import the new slice
 //
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [adminDataSlice, footerDataSlice, adminGithubDataSlice], // Specify which slices should be persisted
+  whitelist: [
+    adminDataSlice,
+    footerDataSlice,
+    adminGithubDataSlice,
+    adminProjectsDataSlice,
+  ], // Specify which slices should be persisted
 };
 
 const rootReducer = combineReducers({
   adminDataReducer: adminDataSlice, // Register the reducer
   adminGithubDataReducer: adminGithubDataSlice,
   footerReducer: footerDataSlice,
+  adminProjectsDataReducer: adminProjectsDataSlice,
 });
 //
 const persistedReducer = persistReducer(persistConfig, rootReducer);

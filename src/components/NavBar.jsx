@@ -16,7 +16,7 @@ const NavBar = () => {
   //
   return (
     <nav className="sticky top-0 left-0 py-2 z-20 border-b-1 border-dark/20">
-      <div className="w-300 mx-auto flex justify-between items-center">
+      <div className="mx-auto flex justify-between items-center">
         {/* Main Content */}
         <motion.div
           initial={{ opacity: 0, y: -10 }} // Start hidden, move from right
